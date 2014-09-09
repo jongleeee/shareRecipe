@@ -41,6 +41,18 @@
 		FF48DF6119BA7A65005E349D /* home_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF48DF4F19BA7A65005E349D /* home_highlighted@2x.png */; };
 		FF48DF6219BA7A65005E349D /* selected_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = FF48DF5019BA7A65005E349D /* selected_arrow.png */; };
 		FF48DF6319BA7A65005E349D /* selected_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF48DF5119BA7A65005E349D /* selected_arrow@2x.png */; };
+		FFA9EB0419BE2D8500B0BC6B /* RecipeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA9EB0319BE2D8500B0BC6B /* RecipeTableViewController.m */; };
+		FFA9EB0619BE2FCE00B0BC6B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB0519BE2FCE00B0BC6B /* AudioToolbox.framework */; };
+		FFA9EB0819BE2FD600B0BC6B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB0719BE2FD600B0BC6B /* CFNetwork.framework */; };
+		FFA9EB0A19BE2FE500B0BC6B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB0919BE2FE500B0BC6B /* CoreLocation.framework */; };
+		FFA9EB0C19BE2FEE00B0BC6B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB0B19BE2FEE00B0BC6B /* libz.dylib */; };
+		FFA9EB0E19BE2FF700B0BC6B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB0D19BE2FF700B0BC6B /* MobileCoreServices.framework */; };
+		FFA9EB1019BE2FFF00B0BC6B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB0F19BE2FFF00B0BC6B /* QuartzCore.framework */; };
+		FFA9EB1219BE300800B0BC6B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB1119BE300800B0BC6B /* Security.framework */; };
+		FFA9EB1419BE301000B0BC6B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB1319BE301000B0BC6B /* StoreKit.framework */; };
+		FFA9EB1619BE301800B0BC6B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB1519BE301800B0BC6B /* SystemConfiguration.framework */; };
+		FFA9EB1819BE302200B0BC6B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB1719BE302200B0BC6B /* Parse.framework */; };
+		FFA9EB2019BE337B00B0BC6B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +103,20 @@
 		FF48DF4F19BA7A65005E349D /* home_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_highlighted@2x.png"; sourceTree = "<group>"; };
 		FF48DF5019BA7A65005E349D /* selected_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_arrow.png; sourceTree = "<group>"; };
 		FF48DF5119BA7A65005E349D /* selected_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected_arrow@2x.png"; sourceTree = "<group>"; };
+		FFA9EB0219BE2D8500B0BC6B /* RecipeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewController.h; sourceTree = "<group>"; };
+		FFA9EB0319BE2D8500B0BC6B /* RecipeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewController.m; sourceTree = "<group>"; };
+		FFA9EB0519BE2FCE00B0BC6B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FFA9EB0719BE2FD600B0BC6B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		FFA9EB0919BE2FE500B0BC6B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FFA9EB0B19BE2FEE00B0BC6B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FFA9EB0D19BE2FF700B0BC6B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FFA9EB0F19BE2FFF00B0BC6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FFA9EB1119BE300800B0BC6B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FFA9EB1319BE301000B0BC6B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FFA9EB1519BE301800B0BC6B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FFA9EB1719BE302200B0BC6B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		FFA9EB1E19BE337B00B0BC6B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +124,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA9EB1619BE301800B0BC6B /* SystemConfiguration.framework in Frameworks */,
+				FFA9EB1419BE301000B0BC6B /* StoreKit.framework in Frameworks */,
+				FFA9EB1219BE300800B0BC6B /* Security.framework in Frameworks */,
+				FFA9EB1019BE2FFF00B0BC6B /* QuartzCore.framework in Frameworks */,
+				FFA9EB0E19BE2FF700B0BC6B /* MobileCoreServices.framework in Frameworks */,
+				FFA9EB0C19BE2FEE00B0BC6B /* libz.dylib in Frameworks */,
+				FFA9EB0A19BE2FE500B0BC6B /* CoreLocation.framework in Frameworks */,
 				FF32838719B6EFE900DBDEC7 /* CoreGraphics.framework in Frameworks */,
+				FFA9EB0819BE2FD600B0BC6B /* CFNetwork.framework in Frameworks */,
+				FFA9EB0619BE2FCE00B0BC6B /* AudioToolbox.framework in Frameworks */,
+				FFA9EB1819BE302200B0BC6B /* Parse.framework in Frameworks */,
 				FF32838B19B6EFE900DBDEC7 /* CoreData.framework in Frameworks */,
 				FF32838919B6EFE900DBDEC7 /* UIKit.framework in Frameworks */,
 				FF32838519B6EFE900DBDEC7 /* Foundation.framework in Frameworks */,
@@ -122,6 +158,7 @@
 		FF32837819B6EFE900DBDEC7 = {
 			isa = PBXGroup;
 			children = (
+				FFA9EB1719BE302200B0BC6B /* Parse.framework */,
 				FF48DF3F19BA7A65005E349D /* Example Images */,
 				FF32838C19B6EFE900DBDEC7 /* ShareRecipe */,
 				FF3283A919B6EFE900DBDEC7 /* ShareRecipeTests */,
@@ -142,6 +179,15 @@
 		FF32838319B6EFE900DBDEC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFA9EB1519BE301800B0BC6B /* SystemConfiguration.framework */,
+				FFA9EB1319BE301000B0BC6B /* StoreKit.framework */,
+				FFA9EB1119BE300800B0BC6B /* Security.framework */,
+				FFA9EB0F19BE2FFF00B0BC6B /* QuartzCore.framework */,
+				FFA9EB0D19BE2FF700B0BC6B /* MobileCoreServices.framework */,
+				FFA9EB0B19BE2FEE00B0BC6B /* libz.dylib */,
+				FFA9EB0919BE2FE500B0BC6B /* CoreLocation.framework */,
+				FFA9EB0719BE2FD600B0BC6B /* CFNetwork.framework */,
+				FFA9EB0519BE2FCE00B0BC6B /* AudioToolbox.framework */,
 				FF32838419B6EFE900DBDEC7 /* Foundation.framework */,
 				FF32838619B6EFE900DBDEC7 /* CoreGraphics.framework */,
 				FF32838819B6EFE900DBDEC7 /* UIKit.framework */,
@@ -157,6 +203,9 @@
 				FF3283B919B6F02700DBDEC7 /* MainStoryboard.storyboard */,
 				FF32839519B6EFE900DBDEC7 /* AppDelegate.h */,
 				FF32839619B6EFE900DBDEC7 /* AppDelegate.m */,
+				FFA9EB1919BE304400B0BC6B /* Recipe */,
+				FFA9EB1B19BE307C00B0BC6B /* Bowl */,
+				FFA9EB1D19BE309200B0BC6B /* Friends */,
 				FF32839B19B6EFE900DBDEC7 /* Images.xcassets */,
 				FF32839819B6EFE900DBDEC7 /* ShareRecipe.xcdatamodeld */,
 				FF32838D19B6EFE900DBDEC7 /* Supporting Files */,
@@ -216,6 +265,31 @@
 				FF48DF5119BA7A65005E349D /* selected_arrow@2x.png */,
 			);
 			path = "Example Images";
+			sourceTree = "<group>";
+		};
+		FFA9EB1919BE304400B0BC6B /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				FFA9EB0219BE2D8500B0BC6B /* RecipeTableViewController.h */,
+				FFA9EB0319BE2D8500B0BC6B /* RecipeTableViewController.m */,
+				FFA9EB1E19BE337B00B0BC6B /* LoginViewController.h */,
+				FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */,
+			);
+			name = Recipe;
+			sourceTree = "<group>";
+		};
+		FFA9EB1B19BE307C00B0BC6B /* Bowl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Bowl;
+			sourceTree = "<group>";
+		};
+		FFA9EB1D19BE309200B0BC6B /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Friends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +409,8 @@
 				FF32839A19B6EFE900DBDEC7 /* ShareRecipe.xcdatamodeld in Sources */,
 				FF32839719B6EFE900DBDEC7 /* AppDelegate.m in Sources */,
 				FF32839319B6EFE900DBDEC7 /* main.m in Sources */,
+				FFA9EB0419BE2D8500B0BC6B /* RecipeTableViewController.m in Sources */,
+				FFA9EB2019BE337B00B0BC6B /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +527,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareRecipe/ShareRecipe-Prefix.pch";
 				INFOPLIST_FILE = "ShareRecipe/ShareRecipe-Info.plist";
@@ -464,6 +544,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShareRecipe/ShareRecipe-Prefix.pch";
 				INFOPLIST_FILE = "ShareRecipe/ShareRecipe-Info.plist";

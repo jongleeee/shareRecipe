@@ -8,15 +8,24 @@
 
 #import "AppDelegate.h"
 
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize currentUser;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-   
+
+    [Parse setApplicationId:@"Prc6l4J6wN8hULjkLH35uKz5oSZAh2e43Yum03x6"
+                  clientKey:@"NXiPmr7ROvfA2QLkfR8FHGgf5K3bGcIOCuvwwuag"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    self.currentUser = [PFUser currentUser];
+    
     return YES;
 }
 

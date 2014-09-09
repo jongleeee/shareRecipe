@@ -16,18 +16,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="ii2-kx-P4r" kind="relationship" relationship="viewControllers" id="qXO-sj-dHt"/>
-                        <segue destination="DF7-2J-TGI" kind="relationship" relationship="viewControllers" id="fYB-vu-sr8"/>
                         <segue destination="IqH-Lp-x6W" kind="relationship" relationship="viewControllers" id="rUA-4j-EiA"/>
+                        <segue destination="DF7-2J-TGI" kind="relationship" relationship="viewControllers" id="fYB-vu-sr8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fv-LQ-Bb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-256" y="415"/>
         </scene>
-        <!--Table View Controller - ShareRecipe-->
+        <!--Recipe Table View Controller - ShareRecipe-->
         <scene sceneID="8NV-6M-pqk">
             <objects>
-                <tableViewController id="1Mn-0I-t6G" sceneMemberID="viewController">
+                <tableViewController id="1Mn-0I-t6G" customClass="RecipeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3ot-ZX-S2T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,12 +49,34 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="ShareRecipe" id="AwV-gi-mWJ"/>
                     <connections>
-                        <segue destination="6nQ-I9-op4" kind="push" id="lPN-pq-3ZK"/>
+                        <segue destination="6nQ-I9-op4" kind="push" identifier="login" id="lPN-pq-3ZK"/>
+                        <segue destination="MxB-aT-D4n" kind="push" id="bKk-wy-7cn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al5-WU-vxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1019" y="-224"/>
+            <point key="canvasLocation" x="1327" y="-274"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="F41-Hn-4o0">
+            <objects>
+                <viewController id="MxB-aT-D4n" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PUm-Jm-oam"/>
+                        <viewControllerLayoutGuide type="bottom" id="R5I-gS-XfM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l9B-2Z-Haw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xJ8-Vp-PKW">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="BCn-Ky-Vn4"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZiS-ez-HkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1907" y="-274"/>
         </scene>
         <!--Table View Controller - Friends-->
         <scene sceneID="Jes-hz-Jd8">
@@ -89,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1e-fL-AM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="479"/>
+            <point key="canvasLocation" x="1335" y="1847"/>
         </scene>
         <!--View Controller - Search Friends-->
         <scene sceneID="WY0-Wu-LBb">
@@ -122,9 +144,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xA4-Fa-oei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1547" y="479"/>
+            <point key="canvasLocation" x="1855" y="1847"/>
         </scene>
-        <!--Table View Controller - MyRecipe-->
+        <!--Table View Controller - RecipeBowl-->
         <scene sceneID="yq8-GT-sF8">
             <objects>
                 <tableViewController id="Kog-Ha-OwT" sceneMemberID="viewController">
@@ -147,17 +169,72 @@
                             <outlet property="delegate" destination="Kog-Ha-OwT" id="N5p-r8-ER3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MyRecipe" id="Jnb-Yz-G2l">
+                    <navigationItem key="navigationItem" title="RecipeBowl" id="Jnb-Yz-G2l">
+                        <barButtonItem key="leftBarButtonItem" title="myRecipe" id="ION-oH-KaF"/>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="1Bg-uh-zLG">
                             <connections>
                                 <segue destination="JaT-b9-rfR" kind="push" id="px3-o6-jm8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="2ww-TQ-5dD" kind="push" identifier="myRecipe" id="Sca-K7-pjt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EL-x7-kFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="1202"/>
+            <point key="canvasLocation" x="1335" y="454"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="P4k-6w-Xyk">
+            <objects>
+                <tableViewController id="2ww-TQ-5dD" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vgT-II-Xbr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pWW-Kf-PaB">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pWW-Kf-PaB" id="3LS-g8-w6t">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2ww-TQ-5dD" id="HcS-7A-far"/>
+                            <outlet property="delegate" destination="2ww-TQ-5dD" id="rgw-GY-NVm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ggC-jb-FXL"/>
+                    <connections>
+                        <segue destination="XVT-W3-Dr8" kind="push" identifier="editMyRecipe" id="8d7-ZX-r2r"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dxh-aZ-vXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1853" y="1162"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PRt-Vo-7BB">
+            <objects>
+                <viewController id="XVT-W3-Dr8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FPW-9W-Vsh"/>
+                        <viewControllerLayoutGuide type="bottom" id="u55-bd-gtI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8ws-Bq-KUG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pB5-RK-aa7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-X8-sOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2397" y="1160"/>
         </scene>
         <!--View Controller - New Recipe-->
         <scene sceneID="wBL-lv-0qC">
@@ -204,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YoE-wR-w88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519" y="1202"/>
+            <point key="canvasLocation" x="1855" y="415"/>
         </scene>
         <!--Navigation Controller - Recipes-->
         <scene sceneID="KjR-2j-YkS">
@@ -223,12 +300,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWe-Hc-0oO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="-224"/>
+            <point key="canvasLocation" x="809" y="-274"/>
         </scene>
-        <!--View Controller - ShareRecipe-->
+        <!--Login View Controller - ShareRecipe-->
         <scene sceneID="WYN-04-y09">
             <objects>
-                <viewController id="6nQ-I9-op4" sceneMemberID="viewController">
+                <viewController id="6nQ-I9-op4" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sPQ-r9-tgB"/>
                         <viewControllerLayoutGuide type="bottom" id="8Vd-aT-hic"/>
@@ -272,6 +349,9 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="6nQ-I9-op4" eventType="touchUpInside" id="cA5-aA-cHg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5z-sp-lO5">
                                 <rect key="frame" x="43" y="297" width="226" height="30"/>
@@ -290,6 +370,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="ShareRecipe" id="VjZ-ZW-oAa"/>
+                    <connections>
+                        <outlet property="email" destination="Duz-Ue-wFf" id="nHw-gw-PxO"/>
+                        <outlet property="password" destination="k3S-e5-iS1" id="KJF-Vn-uPX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIB-sZ-lKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -362,7 +446,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bb1-ys-BBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="479"/>
+            <point key="canvasLocation" x="809" y="1847"/>
         </scene>
         <!--Navigation Controller - myRecipe-->
         <scene sceneID="TNM-vt-iCF">
@@ -381,7 +465,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdU-Lr-g13" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="1202"/>
+            <point key="canvasLocation" x="809" y="454"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
