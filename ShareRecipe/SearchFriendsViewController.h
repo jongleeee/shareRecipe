@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface SearchFriendsViewController : UIViewController
+@interface SearchFriendsViewController : UIViewController {
+    AppDelegate *appDelegate;
+}
+@property (strong, nonatomic) IBOutlet UITextField *username;
+- (IBAction)findPressed:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SearchFriendsViewController.h"
+#import <Parse/Parse.h>
 
 @interface SearchFriendsViewController ()
 
@@ -14,36 +15,61 @@
 
 @implementation SearchFriendsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    appDelegate = [[UIApplication sharedApplication] delegate];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (IBAction)findPressed:(id)sender {
+    
+    NSString *friendsUsername = self.username.text;
+    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" equalTo:friendsUsername];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (error)
+        {
+            NSLog(@"%@", error);
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ooops!" message:@"Not found!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+            [alertView show];
+        }
+        else
+        {
+            PFRelation *friendsRelation = appDelegate.currentUser[@"friendsRelation"];
+            
+            [friendsRelation addObject:object];
+
+            
+            [appDelegate.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error)
+                {
+                    NSLog(@"%@", error);
+                }
+                else
+                {
+                    PFRelation *userFriendRelation = object[@"friendsRelation"];
+                    [userFriendRelation addObject:appDelegate.currentUser];
+                    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if (error)
+                        {
+                            NSLog(@"%@", error);
+                        }
+                        else
+                        {
+                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Successfully added!" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+                            [alertView show];
+                            [self.navigationController popToRootViewControllerAnimated:YES];
+                        }
+                    }];
+                }
+            }];
+        
+        }
+    }];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
