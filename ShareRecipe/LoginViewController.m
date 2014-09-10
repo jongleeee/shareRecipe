@@ -20,6 +20,8 @@
     [super viewDidLoad];
     appDelegate = [[UIApplication sharedApplication] delegate];
     
+    self.navigationItem.hidesBackButton = YES;
+    self.hidesBottomBarWhenPushed = YES;
 }
 
 

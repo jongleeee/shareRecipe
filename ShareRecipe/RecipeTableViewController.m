@@ -7,6 +7,7 @@
 //
 
 #import "RecipeTableViewController.h"
+#import "LoginViewController.h"
 
 
 @interface RecipeTableViewController ()
@@ -26,10 +27,24 @@
     if (!appDelegate.currentUser)
     {
         [self performSegueWithIdentifier:@"login" sender:self];
+        
     }
     
 }
 
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"login"])
+    {
+        LoginViewController *loginViewController = segue.destinationViewController;
+        loginViewController.hidesBottomBarWhenPushed = YES;
+   
+    }
+    
+}
 
 
 #pragma mark - Table view data source

@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6p5-qe-fre">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="6p5-qe-fre">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6p5-qe-fre" id="fNb-CK-Zox">
@@ -387,8 +387,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="ShareRecipe" id="VjZ-ZW-oAa"/>
                     <connections>
-                        <outlet property="email" destination="Duz-Ue-wFf" id="nHw-gw-PxO"/>
                         <outlet property="password" destination="k3S-e5-iS1" id="KJF-Vn-uPX"/>
+                        <outlet property="username" destination="Duz-Ue-wFf" id="bth-EW-tRN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIB-sZ-lKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -451,7 +451,6 @@
                     <navigationItem key="navigationItem" title="ShareRecipe" id="f6x-Wy-O4b"/>
                     <connections>
                         <outlet property="email" destination="F7J-Xu-eMF" id="fh3-fK-A1k"/>
-                        <outlet property="passwor" destination="BVG-KA-778" id="oQk-8O-3vG"/>
                         <outlet property="password" destination="BVG-KA-778" id="huG-Fh-S6S"/>
                         <outlet property="username" destination="0Sr-9v-G3m" id="nWR-4h-67D"/>
                     </connections>
