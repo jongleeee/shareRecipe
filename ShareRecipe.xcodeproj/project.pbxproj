@@ -23,6 +23,8 @@
 		FF3283AE19B6EFE900DBDEC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF3283AC19B6EFE900DBDEC7 /* InfoPlist.strings */; };
 		FF3283B019B6EFE900DBDEC7 /* ShareRecipeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3283AF19B6EFE900DBDEC7 /* ShareRecipeTests.m */; };
 		FF3283BA19B6F02700DBDEC7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3283B919B6F02700DBDEC7 /* MainStoryboard.storyboard */; };
+		FF32EAE819C0CDD500F1AEF1 /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF32EAE719C0CDD500F1AEF1 /* FriendsTableViewController.m */; };
+		FF32EAEB19C0CDF500F1AEF1 /* SearchFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF32EAEA19C0CDF500F1AEF1 /* SearchFriendsViewController.m */; };
 		FF48DF5219BA7A65005E349D /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF48DF4019BA7A65005E349D /* background.png */; };
 		FF48DF5319BA7A65005E349D /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF48DF4119BA7A65005E349D /* background@2x.png */; };
 		FF48DF5419BA7A65005E349D /* button_separator.png in Resources */ = {isa = PBXBuildFile; fileRef = FF48DF4219BA7A65005E349D /* button_separator.png */; };
@@ -86,6 +88,10 @@
 		FF3283AD19B6EFE900DBDEC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF3283AF19B6EFE900DBDEC7 /* ShareRecipeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareRecipeTests.m; sourceTree = "<group>"; };
 		FF3283B919B6F02700DBDEC7 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
+		FF32EAE619C0CDD500F1AEF1 /* FriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTableViewController.h; sourceTree = "<group>"; };
+		FF32EAE719C0CDD500F1AEF1 /* FriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewController.m; sourceTree = "<group>"; };
+		FF32EAE919C0CDF500F1AEF1 /* SearchFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendsViewController.h; sourceTree = "<group>"; };
+		FF32EAEA19C0CDF500F1AEF1 /* SearchFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendsViewController.m; sourceTree = "<group>"; };
 		FF48DF4019BA7A65005E349D /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		FF48DF4119BA7A65005E349D /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 		FF48DF4219BA7A65005E349D /* button_separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_separator.png; sourceTree = "<group>"; };
@@ -290,6 +296,10 @@
 		FFA9EB1D19BE309200B0BC6B /* Friends */ = {
 			isa = PBXGroup;
 			children = (
+				FF32EAE619C0CDD500F1AEF1 /* FriendsTableViewController.h */,
+				FF32EAE719C0CDD500F1AEF1 /* FriendsTableViewController.m */,
+				FF32EAE919C0CDF500F1AEF1 /* SearchFriendsViewController.h */,
+				FF32EAEA19C0CDF500F1AEF1 /* SearchFriendsViewController.m */,
 			);
 			name = Friends;
 			sourceTree = "<group>";
@@ -419,11 +429,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF32EAEB19C0CDF500F1AEF1 /* SearchFriendsViewController.m in Sources */,
 				FF32839A19B6EFE900DBDEC7 /* ShareRecipe.xcdatamodeld in Sources */,
 				FFC5AE8C19BF7977005B6163 /* RegisterViewController.m in Sources */,
 				FF32839719B6EFE900DBDEC7 /* AppDelegate.m in Sources */,
 				FF32839319B6EFE900DBDEC7 /* main.m in Sources */,
 				FFA9EB0419BE2D8500B0BC6B /* RecipeTableViewController.m in Sources */,
+				FF32EAE819C0CDD500F1AEF1 /* FriendsTableViewController.m in Sources */,
 				FFA9EB2019BE337B00B0BC6B /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

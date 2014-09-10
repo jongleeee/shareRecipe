@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1907" y="-274"/>
         </scene>
-        <!--Table View Controller - Friends-->
+        <!--Friends Table View Controller - Friends-->
         <scene sceneID="Jes-hz-Jd8">
             <objects>
-                <tableViewController id="g9u-GB-eWa" sceneMemberID="viewController">
+                <tableViewController id="g9u-GB-eWa" customClass="FriendsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7PD-91-bMg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="1335" y="1847"/>
         </scene>
-        <!--View Controller - Search Friends-->
+        <!--Search Friends View Controller - Search Friends-->
         <scene sceneID="WY0-Wu-LBb">
             <objects>
-                <viewController id="KSt-WR-zD9" sceneMemberID="viewController">
+                <viewController id="KSt-WR-zD9" customClass="SearchFriendsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TeR-j7-qU1"/>
                         <viewControllerLayoutGuide type="bottom" id="0NA-Xb-xli"/>
