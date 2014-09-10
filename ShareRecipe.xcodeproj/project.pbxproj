@@ -53,6 +53,7 @@
 		FFA9EB1619BE301800B0BC6B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB1519BE301800B0BC6B /* SystemConfiguration.framework */; };
 		FFA9EB1819BE302200B0BC6B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB1719BE302200B0BC6B /* Parse.framework */; };
 		FFA9EB2019BE337B00B0BC6B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */; };
+		FFC5AE8C19BF7977005B6163 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC5AE8B19BF7977005B6163 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,8 @@
 		FFA9EB1719BE302200B0BC6B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		FFA9EB1E19BE337B00B0BC6B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FFC5AE8A19BF7977005B6163 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		FFC5AE8B19BF7977005B6163 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,7 @@
 				FF3283B919B6F02700DBDEC7 /* MainStoryboard.storyboard */,
 				FF32839519B6EFE900DBDEC7 /* AppDelegate.h */,
 				FF32839619B6EFE900DBDEC7 /* AppDelegate.m */,
+				FFC5AE8D19BF797E005B6163 /* Login */,
 				FFA9EB1919BE304400B0BC6B /* Recipe */,
 				FFA9EB1B19BE307C00B0BC6B /* Bowl */,
 				FFA9EB1D19BE309200B0BC6B /* Friends */,
@@ -272,8 +276,6 @@
 			children = (
 				FFA9EB0219BE2D8500B0BC6B /* RecipeTableViewController.h */,
 				FFA9EB0319BE2D8500B0BC6B /* RecipeTableViewController.m */,
-				FFA9EB1E19BE337B00B0BC6B /* LoginViewController.h */,
-				FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */,
 			);
 			name = Recipe;
 			sourceTree = "<group>";
@@ -290,6 +292,17 @@
 			children = (
 			);
 			name = Friends;
+			sourceTree = "<group>";
+		};
+		FFC5AE8D19BF797E005B6163 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FFA9EB1E19BE337B00B0BC6B /* LoginViewController.h */,
+				FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */,
+				FFC5AE8A19BF7977005B6163 /* RegisterViewController.h */,
+				FFC5AE8B19BF7977005B6163 /* RegisterViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF32839A19B6EFE900DBDEC7 /* ShareRecipe.xcdatamodeld in Sources */,
+				FFC5AE8C19BF7977005B6163 /* RegisterViewController.m in Sources */,
 				FF32839719B6EFE900DBDEC7 /* AppDelegate.m in Sources */,
 				FF32839319B6EFE900DBDEC7 /* main.m in Sources */,
 				FFA9EB0419BE2D8500B0BC6B /* RecipeTableViewController.m in Sources */,

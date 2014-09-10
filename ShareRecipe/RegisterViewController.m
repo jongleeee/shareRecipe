@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import <Parse/Parse.h>
 
 @interface RegisterViewController ()
 
@@ -14,36 +15,45 @@
 
 @implementation RegisterViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+
+
+- (IBAction)joinPressed:(id)sender {
+    
+    NSString *parse_username = self.username.text;
+    NSString *parse_email = self.email.text;
+    NSString *parse_password = self.password.text;
+    
+    if ([parse_email length] == 0 || [parse_password length] == 0 || [parse_username length] == 0)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ooops!" message:@"Please fill all the informations!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        
+        [alertView show];
+    }
+    else
+    {
+    
+        
+        PFUser *user = [PFUser user];
+        user.username = parse_username;
+        user.password = parse_password;
+        user.email = parse_email;
+        
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error)
+            {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Username already taken!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+                [alertView show];
+            }
+        }];
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
