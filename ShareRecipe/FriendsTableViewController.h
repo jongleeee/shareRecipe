@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface FriendsTableViewController : UITableViewController
+@interface FriendsTableViewController : UITableViewController {
+    AppDelegate *appDelegate;
+}
+
+@property (strong, nonatomic) NSArray *friendsList;
+
 
 @end

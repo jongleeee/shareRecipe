@@ -20,6 +20,28 @@
 {
     [super viewDidLoad];
     
+    appDelegate = [[UIApplication sharedApplication] delegate];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    PFRelation *friendsRelation = appDelegate.currentUser[@"friendsRelation"];
+    
+    PFQuery *query = [friendsRelation query];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error)
+        {
+            NSLog(@"%@", error);
+        }
+        else
+        {
+            self.friendsList = objects;
+            [self.tableView reloadData];
+        }
+    }];
+
 
 }
 
@@ -38,7 +60,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.friendsList count];
 }
 
 
