@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FavoriteRecipeTableViewController : UITableViewController
+
+@property (nonatomic, strong) NSArray *bowlRecipe;
+
 - (IBAction)myRecipe:(id)sender;
 - (IBAction)addRecipe:(id)sender;
 

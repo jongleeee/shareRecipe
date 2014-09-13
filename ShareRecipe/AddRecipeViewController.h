@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface AddRecipeViewController : UIViewController
+@interface AddRecipeViewController : UIViewController {
+    AppDelegate *appDelegate;
+}
+@property (strong, nonatomic) IBOutlet UIImageView *picture;
+@property (strong, nonatomic) IBOutlet UITextView *ingredients;
+@property (strong, nonatomic) IBOutlet UITextField *recipeTitle;
+@property (strong, nonatomic) IBOutlet UITextView *cookInstruction;
+- (IBAction)donePressed:(id)sender;
+- (IBAction)imagePressed:(id)sender;
 
 @end

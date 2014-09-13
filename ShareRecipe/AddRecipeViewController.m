@@ -7,6 +7,7 @@
 //
 
 #import "AddRecipeViewController.h"
+#import <Parse/Parse.h>
 
 @interface AddRecipeViewController ()
 
@@ -14,36 +15,45 @@
 
 @implementation AddRecipeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    appDelegate = [[UIApplication sharedApplication] delegate];
+
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (IBAction)donePressed:(id)sender {
+    
+    if ([self.recipeTitle.text length] == 0 || [self.ingredients.text length] == 0 || [self.cookInstruction.text length] == 0)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please fill all the information!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    else
+    {
+        NSString *parse_title = self.recipeTitle.text;
+        NSString *parse_ingredient = self.ingredients.text;
+        NSString *parse_instruction = self.cookInstruction.text;
+        
+        NSString *addRecipe = [appDelegate.currentUserName stringByAppendingString:@"_Recipe"];
+        
+        PFObject *newRecipe = [PFObject objectWithClassName:addRecipe];
+        
+        newRecipe[@"name"] = parse_title;
+        newRecipe[@"ingredient"] = parse_ingredient;
+        newRecipe[@"instruction"] = parse_instruction;
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)imagePressed:(id)sender {
+    
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take Photo", @"Choose from album", nil];
+    
+    [action showInView:self.view];
 }
-*/
-
 @end

@@ -73,6 +73,7 @@
                 // adding a separate class for user_recipe
                 NSString *recipeClass = @"_Recipe";
                 NSString *addingRecipeClass = [appDelegate.currentUserName stringByAppendingString:recipeClass];
+                NSString *addingFavoriteClass = [appDelegate.currentUserName stringByAppendingString:@"_Bowl"];
                 
                 PFObject *recipeParseClass = [PFObject objectWithClassName:addingRecipeClass];
                 

@@ -64,7 +64,7 @@
     
     PFObject *currentRecipe = [self.friendRecipeList objectAtIndex:indexPath.row];
     
-    cell.recipeName.text =
+    cell.recipeName.text = currentRecipe[@"name"];
 //    cell.recipePicture
     
     
