@@ -31,8 +31,12 @@
         [self performSegueWithIdentifier:@"login" sender:self];
         
     }
-    
-    
+    else
+    {
+        appDelegate.currentUser = appDelegate.currentUser;
+        appDelegate.currentUserName = appDelegate.currentUser[@"username"];
+        
+    }
     
     
 }

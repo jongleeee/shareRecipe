@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
-@interface FriendRecipeTableViewController : UITableViewController
+@interface FriendRecipeTableViewController : UITableViewController {
+    AppDelegate *appDelegate;
+}
+
+@property (nonatomic, strong) NSArray *friendRecipeList;
+@property (nonatomic, strong) PFUser *detailUser;
 
 @end

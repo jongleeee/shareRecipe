@@ -14,6 +14,7 @@
 }
 
 @property (strong, nonatomic) NSArray *friendsList;
+@property (nonatomic, strong) PFUser *selectedUser;
 
 
 @end

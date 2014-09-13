@@ -24,7 +24,6 @@
     [super viewDidLoad];
     
     appDelegate = [[UIApplication sharedApplication] delegate];
-    
 
 }
 
@@ -34,6 +33,8 @@
     //showing the Recipe I added
     NSString *recipe = @"_Recipe";
     NSString *myRecipe = [appDelegate.currentUserName stringByAppendingString:recipe];
+    
+    
     PFQuery *myList = [PFQuery queryWithClassName:myRecipe];
     [myList orderByAscending:@"updatedAt"];
     

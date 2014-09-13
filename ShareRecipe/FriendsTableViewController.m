@@ -7,6 +7,7 @@
 //
 
 #import "FriendsTableViewController.h"
+#import "FriendRecipeTableViewController.h"
 
 @interface FriendsTableViewController ()
 
@@ -77,10 +78,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectedUser = [self.friendsList objectAtIndex:indexPath.row];
+    
     [self performSegueWithIdentifier:@"friendRecipe" sender:self];
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"friendRecipe"])
+    {
+        FriendRecipeTableViewController *viewController = segue.destinationViewController;
+        viewController.detailUser = self.selectedUser;
+    }
+}
 
 
 @end

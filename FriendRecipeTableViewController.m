@@ -7,6 +7,8 @@
 //
 
 #import "FriendRecipeTableViewController.h"
+#import "FriendRecipeDetailViewController.h"
+#import "MyRecipeCustomTableViewCell.h"
 
 @interface FriendRecipeTableViewController ()
 
@@ -18,37 +20,55 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    appDelegate = [[UIApplication sharedApplication] delegate];
     
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *recipe = @"_Recipe";
+    NSString *friendRecipe = [appDelegate.currentUserName stringByAppendingString:recipe];
+    
+    PFQuery *query = [PFQuery queryWithClassName:friendRecipe];
+    [query orderByDescending:@"updatedAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error)
+        {
+            NSLog(@"error: %@", error);
+        }
+        else
+        {
+            self.friendRecipeList = objects;
+        }
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.friendRecipeList count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MyRecipeCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    PFObject *currentRecipe = [self.friendRecipeList objectAtIndex:indexPath.row];
+    
+    cell.recipeName.text =
+//    cell.recipePicture
+    
+    
+    
     
     return cell;
 }
@@ -57,8 +77,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"friendRecipeDetail" sender:self];
+
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+}
 
 @end

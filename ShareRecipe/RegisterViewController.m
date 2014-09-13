@@ -49,13 +49,14 @@
     else
     {
     
+        
+        NSLog(@"HELLLLO");
         // adding a new user to Parse
         
         PFUser *user = [PFUser user];
         user.username = parse_username;
         user.password = parse_password;
         user.email = parse_email;
-        user[@"friendRelation"] = nil;
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error)
