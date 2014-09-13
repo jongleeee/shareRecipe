@@ -24,21 +24,34 @@
             </objects>
             <point key="canvasLocation" x="-256" y="415"/>
         </scene>
-        <!--Recipe Table View Controller - ShareRecipe-->
+        <!--Recipe Table View Controller - RecipeBowl-->
         <scene sceneID="8NV-6M-pqk">
             <objects>
                 <tableViewController id="1Mn-0I-t6G" customClass="RecipeTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3ot-ZX-S2T">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="22" sectionFooterHeight="22" id="3ot-ZX-S2T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Scx-9t-zbG">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="97" id="Scx-9t-zbG" customClass="MyRecipeCustomTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Scx-9t-zbG" id="eOj-GE-sSt">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0S-YT-09W">
+                                            <rect key="frame" x="20" y="6" width="85" height="85"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN0-fe-Y4W">
+                                            <rect key="frame" x="143" y="37" width="107" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -47,20 +60,20 @@
                             <outlet property="delegate" destination="1Mn-0I-t6G" id="5TC-cx-r5n"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ShareRecipe" id="AwV-gi-mWJ"/>
+                    <navigationItem key="navigationItem" title="RecipeBowl" id="AwV-gi-mWJ"/>
                     <connections>
                         <segue destination="6nQ-I9-op4" kind="push" identifier="login" id="lPN-pq-3ZK"/>
-                        <segue destination="MxB-aT-D4n" kind="push" id="bKk-wy-7cn"/>
+                        <segue destination="MxB-aT-D4n" kind="push" identifier="recipeDetail" id="bKk-wy-7cn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al5-WU-vxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327" y="-274"/>
+            <point key="canvasLocation" x="1137" y="-794"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Detail View Controller - RecipeBowl-->
         <scene sceneID="F41-Hn-4o0">
             <objects>
-                <viewController id="MxB-aT-D4n" sceneMemberID="viewController">
+                <viewController id="MxB-aT-D4n" customClass="RecipeDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PUm-Jm-oam"/>
                         <viewControllerLayoutGuide type="bottom" id="R5I-gS-XfM"/>
@@ -70,13 +83,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xJ8-Vp-PKW">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="BCn-Ky-Vn4"/>
+                    <navigationItem key="navigationItem" title="RecipeBowl" id="xJ8-Vp-PKW">
+                        <barButtonItem key="rightBarButtonItem" title="Bowl!" id="BCn-Ky-Vn4"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiS-ez-HkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907" y="-274"/>
+            <point key="canvasLocation" x="1699" y="-794"/>
         </scene>
         <!--Friends Table View Controller - Friends-->
         <scene sceneID="Jes-hz-Jd8">
@@ -102,12 +115,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Friends" id="7rO-66-WEO">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="edit" id="G54-s0-dfN"/>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="7f8-Bd-Sm2">
                             <connections>
                                 <segue destination="KSt-WR-zD9" kind="push" id="pWr-2o-4cS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="f6W-ml-flf" kind="push" identifier="friendRecipe" id="9YC-rx-fDV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1e-fL-AM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,7 +159,7 @@
                                 <rect key="frame" x="235" y="160" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="15"/>
-                                <state key="normal" title="Find!">
+                                <state key="normal" title="Add!">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -160,23 +177,100 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xA4-Fa-oei" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="1847"/>
+            <point key="canvasLocation" x="1883" y="1867"/>
         </scene>
-        <!--Table View Controller - RecipeBowl-->
+        <!--Friend Recipe Table View Controller-->
+        <scene sceneID="RC2-HX-D4q">
+            <objects>
+                <tableViewController id="f6W-ml-flf" customClass="FriendRecipeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="22" sectionFooterHeight="22" id="D9y-1r-xqn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="97" id="8yE-S1-Eoy" customClass="MyRecipeCustomTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8yE-S1-Eoy" id="SzQ-0w-ohI">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="96"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSo-dJ-Fft">
+                                            <rect key="frame" x="20" y="6" width="84" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB1-eU-qMd">
+                                            <rect key="frame" x="143" y="37" width="107" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="f6W-ml-flf" id="ycC-yj-EPE"/>
+                            <outlet property="delegate" destination="f6W-ml-flf" id="q9g-MT-gZw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="A94-dk-PaP"/>
+                    <connections>
+                        <segue destination="TeC-G5-tJv" kind="push" identifier="friendRecipeDetail" id="Bie-h2-1i0"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gby-PI-jhu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1883" y="2591"/>
+        </scene>
+        <!--Friend Recipe Detail View Controller-->
+        <scene sceneID="T7Z-82-Yt9">
+            <objects>
+                <viewController id="TeC-G5-tJv" customClass="FriendRecipeDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BNj-ZI-kGL"/>
+                        <viewControllerLayoutGuide type="bottom" id="NvZ-GG-TkZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H4U-hy-n8a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="knA-Mk-JBu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iEs-2g-vq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2356" y="2591"/>
+        </scene>
+        <!--Favorite Recipe Table View Controller - RecipeBowl-->
         <scene sceneID="yq8-GT-sF8">
             <objects>
-                <tableViewController id="Kog-Ha-OwT" sceneMemberID="viewController">
+                <tableViewController id="Kog-Ha-OwT" customClass="FavoriteRecipeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="s9y-33-fxd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="osh-E8-1ma">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="97" id="osh-E8-1ma" customClass="MyRecipeCustomTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="osh-E8-1ma" id="JWg-66-Prt">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jZ-Hu-hcj">
+                                            <rect key="frame" x="20" y="6" width="85" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIb-AU-0Z8">
+                                            <rect key="frame" x="143" y="37" width="107" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -186,45 +280,73 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="RecipeBowl" id="Jnb-Yz-G2l">
-                        <barButtonItem key="leftBarButtonItem" title="myRecipe" id="ION-oH-KaF"/>
+                        <barButtonItem key="leftBarButtonItem" title="myRecipe" id="ION-oH-KaF">
+                            <connections>
+                                <action selector="myRecipe:" destination="Kog-Ha-OwT" id="YdG-M4-EGe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="1Bg-uh-zLG">
                             <connections>
-                                <segue destination="JaT-b9-rfR" kind="push" id="px3-o6-jm8"/>
+                                <action selector="addRecipe:" destination="Kog-Ha-OwT" id="CMQ-ks-rMT"/>
+                                <segue destination="JaT-b9-rfR" kind="push" identifier="addRecipe" id="px3-o6-jm8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="2ww-TQ-5dD" kind="push" identifier="myRecipe" id="Sca-K7-pjt"/>
+                        <segue destination="xq8-D1-R8i" kind="push" identifier="favoriteRecipeDetail" id="3UD-Z5-cSx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EL-x7-kFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1335" y="454"/>
         </scene>
-        <!--Table View Controller-->
+        <!--My Recipe Table View Controller - Recipe-->
         <scene sceneID="P4k-6w-Xyk">
             <objects>
-                <tableViewController id="2ww-TQ-5dD" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vgT-II-Xbr">
+                <tableViewController id="2ww-TQ-5dD" customClass="myRecipeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vgT-II-Xbr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pWW-Kf-PaB">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="97" id="pWW-Kf-PaB" customClass="MyRecipeCustomTableViewCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pWW-Kf-PaB" id="3LS-g8-w6t">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2HZ-3j-Qey">
+                                            <rect key="frame" x="20" y="5" width="85" height="86"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lHH-GJ-CAq">
+                                            <rect key="frame" x="0.0" y="183" width="85" height="88"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMF-R6-M6R">
+                                            <rect key="frame" x="143" y="37" width="107" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="recipeName" destination="TMF-R6-M6R" id="3fI-Km-wjj"/>
+                                    <outlet property="recipePicture" destination="2HZ-3j-Qey" id="DAX-p5-g7J"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="2ww-TQ-5dD" id="HcS-7A-far"/>
                             <outlet property="delegate" destination="2ww-TQ-5dD" id="rgw-GY-NVm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ggC-jb-FXL"/>
+                    <navigationItem key="navigationItem" title="Recipe" id="ggC-jb-FXL"/>
                     <connections>
                         <segue destination="XVT-W3-Dr8" kind="push" identifier="editMyRecipe" id="8d7-ZX-r2r"/>
                     </connections>
@@ -233,10 +355,10 @@
             </objects>
             <point key="canvasLocation" x="1853" y="1162"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Recipe Detail View Controller - Recipe-->
         <scene sceneID="PRt-Vo-7BB">
             <objects>
-                <viewController id="XVT-W3-Dr8" sceneMemberID="viewController">
+                <viewController id="XVT-W3-Dr8" customClass="FavoriteRecipeDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FPW-9W-Vsh"/>
                         <viewControllerLayoutGuide type="bottom" id="u55-bd-gtI"/>
@@ -244,18 +366,24 @@
                     <view key="view" contentMode="scaleToFill" id="8ws-Bq-KUG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-2f-ttE">
+                                <rect key="frame" x="48" y="89" width="225" height="215"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pB5-RK-aa7"/>
+                    <navigationItem key="navigationItem" title="Recipe" id="pB5-RK-aa7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-X8-sOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2397" y="1160"/>
         </scene>
-        <!--View Controller - New Recipe-->
+        <!--Add Recipe View Controller - New Recipe-->
         <scene sceneID="wBL-lv-0qC">
             <objects>
-                <viewController id="JaT-b9-rfR" sceneMemberID="viewController">
+                <viewController id="JaT-b9-rfR" customClass="AddRecipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kzO-2H-IvY"/>
                         <viewControllerLayoutGuide type="bottom" id="Vh1-Ef-HsD"/>
@@ -264,32 +392,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ruq-N3-xsV">
-                                <rect key="frame" x="45" y="227" width="230" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ingredients" translatesAutoresizingMaskIntoConstraints="NO" id="0FA-ha-ZVR">
-                                <rect key="frame" x="45" y="273" width="230" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWz-43-GQY">
-                                <rect key="frame" x="66" y="83" width="188" height="118"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zj-HL-YGf">
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="How to make" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-ap-gB8">
-                                <rect key="frame" x="45" y="363" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO3-dO-VKe">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="950"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2vb-qn-Ddk">
+                                                <rect key="frame" x="47" y="20" width="227" height="187"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifv-qC-Ccg">
+                                                <rect key="frame" x="20" y="220" width="39" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tmn-Tm-Zpw">
+                                                <rect key="frame" x="39" y="247" width="245" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgv-El-jv3">
+                                                <rect key="frame" x="20" y="287" width="89" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAl-tL-yVj">
+                                                <rect key="frame" x="39" y="321" width="245" height="167"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's cook!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdX-x6-JI0">
+                                                <rect key="frame" x="20" y="509" width="85" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fNM-dy-zAm">
+                                                <rect key="frame" x="39" y="545" width="245" height="385"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="H7c-QQ-TCE"/>
+                                            <constraint firstAttribute="height" constant="950" id="xFm-TG-Yde"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qO3-dO-VKe" secondAttribute="trailing" id="0U8-hL-kN8"/>
+                                    <constraint firstItem="qO3-dO-VKe" firstAttribute="top" secondItem="9zj-HL-YGf" secondAttribute="top" id="9hM-jG-iXv"/>
+                                    <constraint firstAttribute="bottom" secondItem="qO3-dO-VKe" secondAttribute="bottom" id="Wop-zy-Oj3"/>
+                                    <constraint firstItem="qO3-dO-VKe" firstAttribute="leading" secondItem="9zj-HL-YGf" secondAttribute="leading" id="iy2-BB-7ea"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9zj-HL-YGf" secondAttribute="trailing" id="LCU-l6-68d"/>
+                            <constraint firstItem="Vh1-Ef-HsD" firstAttribute="top" secondItem="9zj-HL-YGf" secondAttribute="bottom" constant="1" id="Sas-Un-RsN"/>
+                            <constraint firstItem="9zj-HL-YGf" firstAttribute="top" secondItem="kzO-2H-IvY" secondAttribute="bottom" id="ZaQ-TM-8NM"/>
+                            <constraint firstItem="9zj-HL-YGf" firstAttribute="leading" secondItem="oTk-Bq-bTb" secondAttribute="leading" id="pPG-l3-c8S"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Recipe" id="BNQ-Jf-Ndj">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="6C5-wj-uax"/>
@@ -297,7 +474,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YoE-wR-w88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="415"/>
+            <point key="canvasLocation" x="1968" y="368"/>
+        </scene>
+        <!--Favorite Recipe Detail View Controller - Recipe-->
+        <scene sceneID="Kaw-tW-0At">
+            <objects>
+                <viewController id="xq8-D1-R8i" customClass="FavoriteRecipeDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I2a-Ah-Xoa"/>
+                        <viewControllerLayoutGuide type="bottom" id="UGG-o8-djK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eeq-UP-lJN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe" id="ZzG-eM-lwB">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="edit" id="IU5-T4-rzF"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Pb-bG-49J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2099" y="-524"/>
         </scene>
         <!--Navigation Controller - Recipes-->
         <scene sceneID="KjR-2j-YkS">
@@ -316,9 +514,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWe-Hc-0oO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="809" y="-274"/>
+            <point key="canvasLocation" x="619" y="-794"/>
         </scene>
-        <!--Login View Controller - ShareRecipe-->
+        <!--Login View Controller - RecipeBowl-->
         <scene sceneID="WYN-04-y09">
             <objects>
                 <viewController id="6nQ-I9-op4" customClass="LoginViewController" sceneMemberID="viewController">
@@ -330,8 +528,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to ShareRecipe!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXh-QY-SfJ">
-                                <rect key="frame" x="25" y="100" width="271" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to RecipeBowl!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXh-QY-SfJ">
+                                <rect key="frame" x="30" y="100" width="261" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -385,7 +583,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ShareRecipe" id="VjZ-ZW-oAa"/>
+                    <navigationItem key="navigationItem" title="RecipeBowl" id="VjZ-ZW-oAa"/>
                     <connections>
                         <outlet property="password" destination="k3S-e5-iS1" id="KJF-Vn-uPX"/>
                         <outlet property="username" destination="Duz-Ue-wFf" id="bth-EW-tRN"/>
@@ -393,9 +591,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIB-sZ-lKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1413" y="-1107"/>
+            <point key="canvasLocation" x="1519" y="-1561"/>
         </scene>
-        <!--Register View Controller - ShareRecipe-->
+        <!--Register View Controller - RecipeBowl-->
         <scene sceneID="nRR-uW-Yfq">
             <objects>
                 <viewController id="rhe-21-EHD" customClass="RegisterViewController" sceneMemberID="viewController">
@@ -407,8 +605,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to ShareRecipe!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whU-d0-c6l">
-                                <rect key="frame" x="25" y="100" width="271" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to RecipeBowl!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whU-d0-c6l">
+                                <rect key="frame" x="29" y="100" width="262" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -448,7 +646,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ShareRecipe" id="f6x-Wy-O4b"/>
+                    <navigationItem key="navigationItem" title="RecipeBowl" id="f6x-Wy-O4b">
+                        <barButtonItem key="backBarButtonItem" title="Log In" id="z9S-2H-QZ1"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="email" destination="F7J-Xu-eMF" id="fh3-fK-A1k"/>
                         <outlet property="password" destination="BVG-KA-778" id="huG-Fh-S6S"/>
@@ -457,7 +657,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4u-fJ-gsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921" y="-1107"/>
+            <point key="canvasLocation" x="2027" y="-1561"/>
         </scene>
         <!--Navigation Controller - Friends-->
         <scene sceneID="GFj-SP-GvV">

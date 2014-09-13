@@ -24,11 +24,16 @@
     appDelegate = [[UIApplication sharedApplication] delegate];
     NSLog(@"%@", appDelegate.currentUser);
     
+    
+    // if there is no current user, we go to login page
     if (!appDelegate.currentUser)
     {
         [self performSegueWithIdentifier:@"login" sender:self];
         
     }
+    
+    
+    
     
 }
 
@@ -41,7 +46,7 @@
     {
         LoginViewController *loginViewController = segue.destinationViewController;
         loginViewController.hidesBottomBarWhenPushed = YES;
-   
+        loginViewController.navigationItem.hidesBackButton = YES;
     }
     
 }
@@ -73,7 +78,10 @@
 
 
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"recipeDetail" sender:self];
+}
 
 
 

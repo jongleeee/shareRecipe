@@ -15,6 +15,8 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize currentUser;
+@synthesize friendList;
+@synthesize currentUserName;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -25,6 +27,7 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     self.currentUser = [PFUser currentUser];
+    
     
     return YES;
 }

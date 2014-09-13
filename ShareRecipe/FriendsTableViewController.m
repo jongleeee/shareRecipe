@@ -75,6 +75,10 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"friendRecipe" sender:self];
+}
 
 
 

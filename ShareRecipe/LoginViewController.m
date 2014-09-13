@@ -21,7 +21,6 @@
     appDelegate = [[UIApplication sharedApplication] delegate];
     
     self.navigationItem.hidesBackButton = YES;
-    self.hidesBottomBarWhenPushed = YES;
 }
 
 
@@ -41,6 +40,9 @@
         }
         else
         {
+            
+            appDelegate.currentUser = user;
+            appDelegate.currentUserName = username;
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
     }];

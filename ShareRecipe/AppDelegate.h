@@ -19,6 +19,8 @@
 
 
 @property (nonatomic, strong) PFUser *currentUser;
+@property (nonatomic, strong) NSString *currentUserName;
+@property (nonatomic, strong) PFQuery *friendList;
 
 
 - (void)saveContext;

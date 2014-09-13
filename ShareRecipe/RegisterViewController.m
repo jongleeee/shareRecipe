@@ -21,8 +21,10 @@
 {
     [super viewDidLoad];
     
-    
+    self.navigationItem.backBarButtonItem.title = @"login";
   
+    // sharing property of appDelegate
+    appDelegate = [[UIApplication sharedApplication] delegate];
 }
 
 
@@ -35,6 +37,9 @@
     NSString *parse_email = self.email.text;
     NSString *parse_password = self.password.text;
     
+    
+    
+    // when all informations are not filled
     if ([parse_email length] == 0 || [parse_password length] == 0 || [parse_username length] == 0)
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ooops!" message:@"Please fill all the informations!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
@@ -44,17 +49,44 @@
     else
     {
     
+        // adding a new user to Parse
         
         PFUser *user = [PFUser user];
         user.username = parse_username;
         user.password = parse_password;
         user.email = parse_email;
+        user[@"friendRelation"] = nil;
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error)
             {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Username already taken!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
                 [alertView show];
+            }
+            else
+            {
+                appDelegate.currentUser = user;
+                appDelegate.friendList = nil;
+                appDelegate.currentUserName = parse_username;
+                
+                // adding a separate class for user_recipe
+                NSString *recipeClass = @"_Recipe";
+                NSString *addingRecipeClass = [appDelegate.currentUserName stringByAppendingString:recipeClass];
+                
+                PFObject *recipeParseClass = [PFObject objectWithClassName:addingRecipeClass];
+                
+                [recipeParseClass saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (error)
+                    {
+                        NSLog(@"error: %@", error);
+                    }
+                    else
+                    {
+                        [self.navigationController popToRootViewControllerAnimated:YES];
+
+                    }
+                }];
+                
             }
         }];
     }
