@@ -545,7 +545,7 @@
                         <outlet property="ingredients" destination="wAl-tL-yVj" id="j9s-Pf-l1a"/>
                         <outlet property="picture" destination="2vb-qn-Ddk" id="WYg-7Q-hK9"/>
                         <outlet property="recipeTitle" destination="Tmn-Tm-Zpw" id="dma-e2-o2Z"/>
-                        <segue destination="eJs-ax-nSv" kind="push" id="4kX-gI-K8x"/>
+                        <segue destination="eJs-ax-nSv" kind="push" identifier="addTime" id="4kX-gI-K8x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YoE-wR-w88" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -557,10 +557,10 @@
             </objects>
             <point key="canvasLocation" x="1966" y="369"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Time View Controller-->
         <scene sceneID="wgy-Zu-wNe">
             <objects>
-                <viewController id="eJs-ax-nSv" sceneMemberID="viewController">
+                <viewController id="eJs-ax-nSv" customClass="RecipeTimeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="haR-DI-O7V"/>
                         <viewControllerLayoutGuide type="bottom" id="m8b-Tb-G5D"/>
@@ -583,8 +583,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="MwB-Z7-bJt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0Yr-Cv-pJX"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="0Yr-Cv-pJX">
+                            <connections>
+                                <action selector="donePressed:" destination="eJs-ax-nSv" id="LEQ-Np-1kW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="time" destination="FEU-jp-r5X" id="YdW-ap-UJf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYR-Dc-ftm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -609,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pb-bG-49J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2099" y="-524"/>
+            <point key="canvasLocation" x="2257" y="-434"/>
         </scene>
         <!--Navigation Controller - Recipes-->
         <scene sceneID="KjR-2j-YkS">

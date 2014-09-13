@@ -7,6 +7,7 @@
 //
 
 #import "AddRecipeViewController.h"
+#import "RecipeTimeViewController.h"
 #import <Parse/Parse.h>
 
 @interface AddRecipeViewController ()
@@ -47,8 +48,35 @@
         newRecipe[@"name"] = parse_title;
         newRecipe[@"ingredient"] = parse_ingredient;
         newRecipe[@"instruction"] = parse_instruction;
+        
+        [newRecipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error)
+            {
+                NSLog(@"error: %@", error);
+            }
+            else
+            {
+                self.currentRecipe = newRecipe;
+                [self performSegueWithIdentifier:@"addTime" sender:self];
+            }
+        }];
+        
+        
+    }
+    
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"addTime"])
+    {
+        RecipeTimeViewController *viewController = segue.destinationViewController;
+        viewController.currentRecipe = self.currentRecipe;
     }
 }
+
+
 
 - (IBAction)imagePressed:(id)sender {
     

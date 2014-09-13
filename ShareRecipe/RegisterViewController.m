@@ -84,8 +84,18 @@
                     }
                     else
                     {
-                        [self.navigationController popToRootViewControllerAnimated:YES];
-
+                        PFObject *recipeBowl = [PFObject objectWithClassName:addingFavoriteClass];
+                        [recipeBowl saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            if (error)
+                            {
+                                NSLog(@"%@", error);
+                            }
+                            else
+                            {
+                                [self.navigationController popToRootViewControllerAnimated:YES];
+                            }
+                        }];
+                        
                     }
                 }];
                 

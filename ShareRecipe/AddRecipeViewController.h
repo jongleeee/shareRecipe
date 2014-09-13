@@ -16,6 +16,8 @@
 @property (strong, nonatomic) IBOutlet UITextView *ingredients;
 @property (strong, nonatomic) IBOutlet UITextField *recipeTitle;
 @property (strong, nonatomic) IBOutlet UITextView *cookInstruction;
+@property (strong, nonatomic) PFObject *currentRecipe;
+
 - (IBAction)donePressed:(id)sender;
 - (IBAction)imagePressed:(id)sender;
 

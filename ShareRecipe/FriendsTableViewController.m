@@ -27,6 +27,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
     PFRelation *friendsRelation = appDelegate.currentUser[@"friendsRelation"];
     
     PFQuery *query = [friendsRelation query];
