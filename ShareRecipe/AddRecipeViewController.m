@@ -9,6 +9,8 @@
 #import "AddRecipeViewController.h"
 #import "RecipeTimeViewController.h"
 #import <Parse/Parse.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+
 
 @interface AddRecipeViewController ()
 
@@ -84,4 +86,83 @@
     
     [action showInView:self.view];
 }
+
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        [self takePhoto];
+        [self upload];
+        
+    }
+    else if (buttonIndex == 1)
+    {
+        [self getPhoto];
+        [self upload];
+        
+    }
+    
+    
+}
+
+
+#pragma mark - picture and upload method
+
+- (void)takePhoto
+{
+
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
+    
+    [self presentViewController:self.imagePicker animated:NO completion:nil];
+
+}
+
+- (void)getPhoto
+{
+    
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    self.imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:self.imagePicker.sourceType];
+    
+    [self presentViewController:self.imagePicker animated:NO completion:nil];
+    
+}
+
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage])
+    {
+        self.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        
+        
+        if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera)
+        {
+            UIImageWriteToSavedPhotosAlbum(self.image, nil, nil, nil);
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+- (void)upload
+{
+    
+}
+
+
 @end
