@@ -10,6 +10,7 @@
 
 @interface MyRecipeCustomTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *recipeName;
+@property (strong, nonatomic) IBOutlet UILabel *recipeTime;
 @property (strong, nonatomic) IBOutlet UIImageView *recipePicture;
 
 @end

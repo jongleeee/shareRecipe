@@ -20,11 +20,22 @@
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
 @property (strong, nonatomic) UIImage *image;
 
+
+// Picker View properties
+
+@property (strong, nonatomic) IBOutlet UIPickerView *timeSelect;
+@property (nonatomic, strong) NSArray *timeList;
+@property (nonatomic, readwrite) NSInteger time;
+@property (nonatomic, strong) NSString *cookTime;
+
+
 - (IBAction)donePressed:(id)sender;
-- (IBAction)imagePressed:(id)sender;
 
 - (void)takePhoto;
 - (void)getPhoto;
-- (void)upload;
+- (void)getImageAndUpload;
+- (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height;
+
+- (void)getTime;
 
 @end

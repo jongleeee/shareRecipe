@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface RecipeDetailViewController : UIViewController
+
+@property (nonatomic, strong) PFObject *selectedRecipe;
 
 @end

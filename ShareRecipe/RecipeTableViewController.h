@@ -13,4 +13,7 @@
     AppDelegate *appDelegate;
 }
 
+@property (nonatomic, strong) NSArray *bowlList;
+@property (nonatomic, strong) PFObject *selectedRecipe;
+
 @end

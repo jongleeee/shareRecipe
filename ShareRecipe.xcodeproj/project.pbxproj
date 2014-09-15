@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF2C8C6319C42B41008758BC /* RecipeTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2C8C6219C42B41008758BC /* RecipeTimeViewController.m */; };
 		FF32838519B6EFE900DBDEC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF32838419B6EFE900DBDEC7 /* Foundation.framework */; };
 		FF32838719B6EFE900DBDEC7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF32838619B6EFE900DBDEC7 /* CoreGraphics.framework */; };
 		FF32838919B6EFE900DBDEC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF32838819B6EFE900DBDEC7 /* UIKit.framework */; };
@@ -79,8 +78,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FF2C8C6119C42B41008758BC /* RecipeTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTimeViewController.h; sourceTree = "<group>"; };
-		FF2C8C6219C42B41008758BC /* RecipeTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTimeViewController.m; sourceTree = "<group>"; };
 		FF32838119B6EFE900DBDEC7 /* ShareRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF32838419B6EFE900DBDEC7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FF32838619B6EFE900DBDEC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -338,8 +335,6 @@
 				FF45942E19C3AADF00E48721 /* myRecipeTableViewController.m */,
 				FF45944319C3BEB100E48721 /* AddRecipeViewController.h */,
 				FF45944419C3BEB100E48721 /* AddRecipeViewController.m */,
-				FF2C8C6119C42B41008758BC /* RecipeTimeViewController.h */,
-				FF2C8C6219C42B41008758BC /* RecipeTimeViewController.m */,
 				FF45943419C3AE5900E48721 /* EditMyRecipeViewController.h */,
 				FF45943519C3AE5900E48721 /* EditMyRecipeViewController.m */,
 				FF45943319C3ADFA00E48721 /* CustomCell */,
@@ -500,7 +495,6 @@
 				FF45949E19C3C3BA00E48721 /* FriendRecipeTableViewController.m in Sources */,
 				FF45942F19C3AADF00E48721 /* myRecipeTableViewController.m in Sources */,
 				FF45942619C3A09600E48721 /* FavoriteRecipeTableViewController.m in Sources */,
-				FF2C8C6319C42B41008758BC /* RecipeTimeViewController.m in Sources */,
 				FF32EAE819C0CDD500F1AEF1 /* FriendsTableViewController.m in Sources */,
 				FFA9EB2019BE337B00B0BC6B /* LoginViewController.m in Sources */,
 				FF45943F19C3BC5E00E48721 /* FavoriteRecipeDetailViewController.m in Sources */,

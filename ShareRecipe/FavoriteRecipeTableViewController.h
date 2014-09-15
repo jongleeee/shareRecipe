@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
 
-@interface FavoriteRecipeTableViewController : UITableViewController
+@interface FavoriteRecipeTableViewController : UITableViewController {
+    AppDelegate *appDelegate;
+}
 
 @property (nonatomic, strong) NSArray *bowlRecipe;
+@property (nonatomic, strong) PFObject *selectedRecipe;
 
 - (IBAction)myRecipe:(id)sender;
 - (IBAction)addRecipe:(id)sender;

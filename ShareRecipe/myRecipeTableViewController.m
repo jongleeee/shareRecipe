@@ -52,6 +52,16 @@
 }
 
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"editMyRecipe"])
+    {
+        EditMyRecipeViewController *viewController = (EditMyRecipeViewController *)segue.destinationViewController;
+        viewController.selectedRecipe = self.selectedRecipe;
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -74,11 +84,13 @@
     
     PFObject *recipe = [self.myRecipeList objectAtIndex:indexPath.row];
     
-    cell.recipeName.text = recipe[@"RecipeNAME"];
+    cell.recipeName.text = recipe[@"name"];
+    cell.recipeTime.text = recipe[@"time"];
     
-    cell.recipePicture.image = recipe[@"RecipePIC"];
-
-    
+    PFFile *imageFile = [recipe objectForKey:@"image"];
+    NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageFile.url];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
+    cell.recipePicture.image = [UIImage imageWithData:imageData];
     
     
     return cell;
@@ -87,7 +99,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.selectedRecipe = [self.myRecipeList objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"editMyRecipe" sender:self];
 }
+
+
 @end

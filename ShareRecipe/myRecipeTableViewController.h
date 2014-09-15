@@ -14,6 +14,5 @@
 }
 
 @property (nonatomic, strong) NSArray *myRecipeList;
-
-
+@property (nonatomic, strong) PFObject *selectedRecipe;
 @end

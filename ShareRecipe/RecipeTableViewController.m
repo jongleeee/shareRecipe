@@ -8,6 +8,9 @@
 
 #import "RecipeTableViewController.h"
 #import "LoginViewController.h"
+#import "AppDelegate.h"
+#import "MyRecipeCustomTableViewCell.h"
+#import "RecipeDetailViewController.h"
 
 
 @interface RecipeTableViewController ()
@@ -36,8 +39,15 @@
         appDelegate.currentUser = appDelegate.currentUser;
         appDelegate.currentUserName = appDelegate.currentUser[@"username"];
         
+        
     }
     
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // get the friends relation and "or" queries of friend's recipe using orQueryWithSubqueries
     
 }
 
@@ -51,6 +61,11 @@
         LoginViewController *loginViewController = segue.destinationViewController;
         loginViewController.hidesBottomBarWhenPushed = YES;
         loginViewController.navigationItem.hidesBackButton = YES;
+    }
+    else if ([segue.identifier isEqualToString:@"recipeDetail"])
+    {
+        RecipeDetailViewController *viewController = (RecipeDetailViewController *)segue.destinationViewController;
+        viewController.selectedRecipe = self.selectedRecipe;
     }
     
 }
@@ -67,15 +82,25 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.bowlList count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MyRecipeCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    PFObject *recipe = [self.bowlList objectAtIndex:indexPath.row];
+    
+    cell.recipeName.text = recipe[@"name"];
+    cell.recipeTime.text = recipe[@"time"];
+    
+    // getting the imageURL from the Parse
+    NSString *imageURL = recipe[@"imageURL"];
+    NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageURL];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
+    cell.recipePicture.image = [UIImage imageWithData:imageData];
+    
     
     return cell;
 }
@@ -84,6 +109,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    self.selectedRecipe = [self.bowlList objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"recipeDetail" sender:self];
 }
 
