@@ -13,5 +13,9 @@
 
 @property PFObject *selectedRecipe;
 
+@property (strong, nonatomic) IBOutlet UIImageView *recipeImage;
+@property (strong, nonatomic) IBOutlet UITextView *recipeInstruction;
+@property (strong, nonatomic) IBOutlet UITextView *recipeIngrdient;
+@property (strong, nonatomic) IBOutlet UILabel *recipeTime;
 
 @end

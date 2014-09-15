@@ -70,33 +70,12 @@
                     <navigationItem key="navigationItem" title="RecipeBowl" id="AwV-gi-mWJ"/>
                     <connections>
                         <segue destination="6nQ-I9-op4" kind="push" identifier="login" id="lPN-pq-3ZK"/>
-                        <segue destination="MxB-aT-D4n" kind="push" identifier="recipeDetail" id="bKk-wy-7cn"/>
+                        <segue destination="vxk-ia-4mO" kind="push" identifier="recipeDetail" id="v1z-75-eCr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al5-WU-vxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137" y="-794"/>
-        </scene>
-        <!--Recipe Detail View Controller - RecipeBowl-->
-        <scene sceneID="F41-Hn-4o0">
-            <objects>
-                <viewController id="MxB-aT-D4n" customClass="RecipeDetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PUm-Jm-oam"/>
-                        <viewControllerLayoutGuide type="bottom" id="R5I-gS-XfM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="l9B-2Z-Haw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="RecipeBowl" id="xJ8-Vp-PKW">
-                        <barButtonItem key="rightBarButtonItem" title="Bowl!" id="BCn-Ky-Vn4"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZiS-ez-HkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1699" y="-794"/>
         </scene>
         <!--Friends Table View Controller - Friends-->
         <scene sceneID="Jes-hz-Jd8">
@@ -315,7 +294,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="2ww-TQ-5dD" kind="push" identifier="myRecipe" id="Sca-K7-pjt"/>
-                        <segue destination="xq8-D1-R8i" kind="push" identifier="favoriteRecipeDetail" id="3UD-Z5-cSx"/>
+                        <segue destination="xq8-D1-R8i" kind="push" identifier="favoriteRecipeDetail" id="Jbh-VJ-k1w"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2EL-x7-kFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -430,7 +409,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How to cook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5K-Uu-kY5">
-                                                <rect key="frame" x="20" y="504" width="98" height="21"/>
+                                                <rect key="frame" x="20" y="504" width="108" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
@@ -488,7 +467,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-X8-sOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2397" y="1160"/>
+            <point key="canvasLocation" x="2309" y="1154"/>
+        </scene>
+        <!--Recipe Detail View Controller-->
+        <scene sceneID="X84-JY-Scb">
+            <objects>
+                <viewController id="vxk-ia-4mO" customClass="RecipeDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pQ6-me-Omz"/>
+                        <viewControllerLayoutGuide type="bottom" id="gx5-Ac-Dq3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JFl-Tg-xe1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnu-fc-9kg">
+                                <rect key="frame" x="0.0" y="64" width="320" height="456"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Nw-Vx-74f">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="994"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xq8-Ya-0O2">
+                                                <rect key="frame" x="31" y="25" width="262" height="251"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXi-zp-qYE">
+                                                <rect key="frame" x="20" y="297" width="87" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCz-bQ-VDV">
+                                                <rect key="frame" x="40" y="326" width="240" height="167"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How to cook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxw-z5-gux">
+                                                <rect key="frame" x="20" y="504" width="111" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPK-aH-GhG">
+                                                <rect key="frame" x="40" y="533" width="240" height="434"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="994" id="cyC-2f-p1L"/>
+                                            <constraint firstAttribute="width" constant="320" id="qzk-XM-2md"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1Nw-Vx-74f" secondAttribute="trailing" id="aAZ-hZ-vmU"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Nw-Vx-74f" secondAttribute="bottom" id="gUv-he-jZ6"/>
+                                    <constraint firstItem="1Nw-Vx-74f" firstAttribute="top" secondItem="Cnu-fc-9kg" secondAttribute="top" id="sGk-WG-pxL"/>
+                                    <constraint firstItem="1Nw-Vx-74f" firstAttribute="leading" secondItem="Cnu-fc-9kg" secondAttribute="leading" id="yjM-Jo-yIX"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cnu-fc-9kg" firstAttribute="leading" secondItem="JFl-Tg-xe1" secondAttribute="leading" id="7ou-NN-9Lu"/>
+                            <constraint firstAttribute="trailing" secondItem="Cnu-fc-9kg" secondAttribute="trailing" id="Ztk-SI-Y8d"/>
+                            <constraint firstItem="Cnu-fc-9kg" firstAttribute="top" secondItem="pQ6-me-Omz" secondAttribute="bottom" id="ukk-Rj-aKs"/>
+                            <constraint firstAttribute="bottom" secondItem="Cnu-fc-9kg" secondAttribute="bottom" constant="48" id="yIo-Ad-TZC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="m6k-oG-iN9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XQe-PV-Kbj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="-794"/>
         </scene>
         <!--Add Recipe View Controller - New Recipe-->
         <scene sceneID="wBL-lv-0qC">
@@ -615,15 +675,90 @@
                     <view key="view" contentMode="scaleToFill" id="eeq-UP-lJN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgM-oa-jLK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ko4-a1-Jmi">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1014"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWg-Dc-FH0">
+                                                <rect key="frame" x="31" y="45" width="262" height="251"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWA-yP-qDL">
+                                                <rect key="frame" x="20" y="317" width="87" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hQM-by-b9P">
+                                                <rect key="frame" x="40" y="346" width="240" height="167"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How to cook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L84-rn-7Av">
+                                                <rect key="frame" x="20" y="524" width="111" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sh7-Ug-ASk">
+                                                <rect key="frame" x="40" y="553" width="240" height="434"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSI-cK-xio">
+                                                <rect key="frame" x="207" y="11" width="86" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="15"/>
+                                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="994" id="bhK-zn-CTF"/>
+                                            <constraint firstAttribute="width" constant="320" id="iBt-30-cuj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ko4-a1-Jmi" secondAttribute="bottom" id="E2g-ZT-grl"/>
+                                    <constraint firstAttribute="trailing" secondItem="ko4-a1-Jmi" secondAttribute="trailing" id="EdG-ee-iJk"/>
+                                    <constraint firstItem="ko4-a1-Jmi" firstAttribute="top" secondItem="MgM-oa-jLK" secondAttribute="top" id="K3x-Eh-B7O"/>
+                                    <constraint firstItem="ko4-a1-Jmi" firstAttribute="leading" secondItem="MgM-oa-jLK" secondAttribute="leading" id="fbg-Qx-JQx"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MgM-oa-jLK" firstAttribute="top" secondItem="I2a-Ah-Xoa" secondAttribute="bottom" id="4df-6X-R7i"/>
+                            <constraint firstItem="UGG-o8-djK" firstAttribute="top" secondItem="MgM-oa-jLK" secondAttribute="bottom" id="kes-qG-cVf"/>
+                            <constraint firstAttribute="trailing" secondItem="MgM-oa-jLK" secondAttribute="trailing" id="uaD-CC-mKh"/>
+                            <constraint firstItem="MgM-oa-jLK" firstAttribute="leading" secondItem="eeq-UP-lJN" secondAttribute="leading" id="yjn-u1-mlx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="ZzG-eM-lwB">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="edit" id="IU5-T4-rzF"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="recipeImage" destination="MWg-Dc-FH0" id="7SA-Lh-tZH"/>
+                        <outlet property="recipeIngrdient" destination="hQM-by-b9P" id="Fb9-J5-UJy"/>
+                        <outlet property="recipeInstruction" destination="sh7-Ug-ASk" id="qZ9-32-lsc"/>
+                        <outlet property="recipeTime" destination="JSI-cK-xio" id="Xoa-js-av6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pb-bG-49J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257" y="-434"/>
+            <point key="canvasLocation" x="1835" y="-72"/>
         </scene>
         <!--Navigation Controller - Recipes-->
         <scene sceneID="KjR-2j-YkS">

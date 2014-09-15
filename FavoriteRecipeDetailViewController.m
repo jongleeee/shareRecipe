@@ -7,6 +7,7 @@
 //
 
 #import "FavoriteRecipeDetailViewController.h"
+#import <Parse/Parse.h>
 
 @interface FavoriteRecipeDetailViewController ()
 
@@ -20,5 +21,22 @@
     [super viewDidLoad];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.title = self.selectedRecipe[@"name"];
+    self.recipeIngrdient.text = self.selectedRecipe[@"ingredient"];
+    self.recipeInstruction.text = self.selectedRecipe[@"instruction"];
+    self.recipeTime.text = self.selectedRecipe[@"time"];
+    
+    
+    PFFile *imageFile = [self.selectedRecipe objectForKey:@"image"];
+    NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageFile.url];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
+    self.recipeImage.image = [UIImage imageWithData:imageData];
+    
+    
+    
+}
 
 @end
