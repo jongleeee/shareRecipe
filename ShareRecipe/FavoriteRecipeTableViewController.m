@@ -81,11 +81,15 @@
     cell.name.text = recipe[@"name"];
     cell.time.text = recipe[@"time"];
     
-    NSURL *imageFile = [recipe objectForKey:@"imageURL"];
-    if (imageFile)
+    NSString *imageFileURL = [recipe objectForKey:@"imageURL"];
+    
+    if (imageFileURL)
     {
-    NSData *imageData = [NSData dataWithContentsOfURL:imageFile];
-    cell.image.image = [UIImage imageWithData:imageData];
+    
+        
+        NSURL *imageFile = [[NSURL alloc] initWithString:imageFileURL];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageFile];
+        cell.image.image = [UIImage imageWithData:imageData];
     }
     else
     {

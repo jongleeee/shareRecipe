@@ -57,8 +57,12 @@
     newBowl[@"time"] = self.time.text;
     newBowl[@"type"] = @"recipe";
     
+    NSLog(@"adding bowl");
+    NSLog(@"%@", self.imageFile.url);
+    
     if (self.imageFile.url)
     {
+        NSLog(@"WEnt IN");
         newBowl[@"imageURL"] = self.imageFile.url;
     }
     

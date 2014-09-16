@@ -61,40 +61,32 @@
             NSString *recipe = @"_Recipe";
             
             PFQuery *firstQuery;
-            PFQuery *secondQuery;
-            PFQuery *thirdQuery;
+
+            
+            self.bowlList = [[NSMutableArray alloc] init];
             
             for (int i = 0; i < [objects count]; i++) {
                 
                 NSString *bowl = [[objects objectAtIndex:i][@"username"] stringByAppendingString:recipe];
                 
-                if (i == 0)
-                {
-                    firstQuery = [PFQuery queryWithClassName:bowl];
-                }
-                else
-                {
-                    secondQuery = [PFQuery queryWithClassName:bowl];
-                    thirdQuery = [PFQuery orQueryWithSubqueries:@[firstQuery, secondQuery]];
-                    firstQuery = thirdQuery;
-                }
+                
+                firstQuery = [PFQuery queryWithClassName:bowl];
+                [firstQuery whereKey:@"type" equalTo:@"recipe"];
+                [firstQuery orderByDescending:@"updatedAt"];
+                
+                [firstQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    if (error)
+                    {
+                        NSLog(@"%@", error);
+                    }
+                    else
+                    {
+                        [self.bowlList addObjectsFromArray:objects];
+                        [self.tableView reloadData];
+                    }
+                }];
+            
             }
-            
-            [firstQuery whereKey:@"type" equalTo:@"recipe"];
-            [firstQuery orderByDescending:@"updatedAt"];
-            
-            [firstQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-            {
-                if (error)
-                {
-                    NSLog(@"error: %@", error);
-                }
-                else
-                {
-                    self.bowlList = objects;
-                    [self.tableView reloadData];
-                }
-            }];
             
         }
     }];
