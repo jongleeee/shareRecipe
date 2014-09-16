@@ -63,6 +63,7 @@
     {
         EditMyRecipeViewController *viewController = (EditMyRecipeViewController *)segue.destinationViewController;
         viewController.selectedRecipe = self.selectedRecipe;
+        viewController.navigationController.hidesBottomBarWhenPushed = YES;
     }
 }
 

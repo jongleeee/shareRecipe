@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface RegisterViewController : UIViewController {
+@interface RegisterViewController : UIViewController <UITextFieldDelegate> {
     AppDelegate *appDelegate;
 }
 @property (strong, nonatomic) IBOutlet UITextField *username;

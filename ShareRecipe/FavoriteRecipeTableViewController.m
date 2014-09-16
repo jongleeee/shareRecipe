@@ -54,6 +54,7 @@
     {
         FavoriteRecipeDetailViewController *viewController = (FavoriteRecipeDetailViewController *)segue.destinationViewController;
         viewController.selectedRecipe = self.selectedRecipe;
+        viewController.tabBarController.hidesBottomBarWhenPushed = YES;
     }
 }
 

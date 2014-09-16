@@ -33,6 +33,17 @@
     self.imagePicker.delegate = self;
     self.imagePicker.allowsEditing = NO;
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
+}
+
+- (void)dismissKeyboard
+{
+    [self.ingredients resignFirstResponder];
+    [self.recipeTitle resignFirstResponder];
+    [self.cookInstruction resignFirstResponder];
 }
 
 

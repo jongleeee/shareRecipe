@@ -119,6 +119,7 @@
     {
         RecipeDetailViewController *viewController = (RecipeDetailViewController *)segue.destinationViewController;
         viewController.selectedRecipe = self.selectedRecipe;
+        viewController.tabBarController.hidesBottomBarWhenPushed = YES;
     }
     
 }

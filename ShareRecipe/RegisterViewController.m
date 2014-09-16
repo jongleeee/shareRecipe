@@ -25,8 +25,17 @@
   
     // sharing property of appDelegate
     appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    [self.username setDelegate:self];
+    [self.password setDelegate:self];
+    [self.email setDelegate:self];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 
 

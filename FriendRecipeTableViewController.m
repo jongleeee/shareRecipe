@@ -106,6 +106,7 @@
     {
         FriendRecipeDetailViewController *viewController = (FriendRecipeDetailViewController *)segue.destinationViewController;
         viewController.selectedRecipe = self.selectedRecipe;
+        viewController.tabBarController.hidesBottomBarWhenPushed = YES;
         
     }
 

@@ -21,8 +21,17 @@
     appDelegate = [[UIApplication sharedApplication] delegate];
     
     self.navigationItem.hidesBackButton = YES;
+    
+    [self.username setDelegate:self];
+    [self.password setDelegate:self];
 }
 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 
 - (IBAction)login:(id)sender {
