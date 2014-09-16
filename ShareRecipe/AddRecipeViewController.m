@@ -7,7 +7,6 @@
 //
 
 #import "AddRecipeViewController.h"
-#import "RecipeTimeViewController.h"
 #import <Parse/Parse.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 
@@ -64,6 +63,10 @@
     {
         [self getPhoto];
         
+    }
+    else
+    {
+        [self upload];
     }
     
     
@@ -127,8 +130,12 @@
         }
         
         // bring user back to the AddRecipe viewController
-        [self dismissViewControllerAnimated:YES completion:nil];
     }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+    
+    [self upload];
 }
 
 
@@ -152,30 +159,35 @@
     NSString *recipeCategory = @"_Recipe";
     NSString *userRecipe = [appDelegate.currentUserName stringByAppendingString:recipeCategory];
     
-    PFObject *recipe = [PFObject objectWithClassName:userRecipe];
-    recipe[@"recipe"] = self.title;
-    recipe[@"ingredients"] = self.ingredients;
-    recipe[@"instructions"] = self.cookInstruction;
-    recipe[@"time"] = self.cookTime;
+    self.currentRecipe = [PFObject objectWithClassName:userRecipe];
+    self.currentRecipe[@"name"] = self.recipeTitle.text;
+    self.currentRecipe[@"ingredients"] = self.ingredients.text;
+    self.currentRecipe[@"instructions"] = self.cookInstruction.text;
+    self.currentRecipe[@"time"] = self.cookTime;
+    self.currentRecipe[@"type"] = @"recipe";
     
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Recipe Image" delegate:self cancelButtonTitle:@"cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take picture", @"Choose from Album", @"No picture", nil];
     
     [actionSheet showInView:self.view];
     
+    
+}
+
+- (void)upload
+{
     NSData *fileData;
     NSString *fileName = @"image.png";
     
     if (self.image == nil)
     {
-        [recipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [self.currentRecipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error)
             {
                 NSLog(@"error: %@", error);
             }
             else
             {
-                self.currentRecipe = recipe;
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }
         }];
@@ -200,15 +212,14 @@
             else
             {
                 // create a class for user_recipe and submit recipe with image
-                [recipe setObject:file forKey:@"image"];
-                [recipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [self.currentRecipe setObject:file forKey:@"image"];
+                [self.currentRecipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                     if (error)
                     {
                         NSLog(@"error: %@", error);
                     }
                     else
                     {
-                        self.currentRecipe = recipe;
                         [self.navigationController popToRootViewControllerAnimated:YES];
                     }
                 }];
@@ -217,12 +228,10 @@
                 
             }
         }];
-    
+        
     }
-    
+
 }
-
-
 
 
 
@@ -257,22 +266,22 @@
 {
     switch (self.time) {
         case 0:
-            self.cookTime = @"10";
+            self.cookTime = @"10 mins";
             break;
         case 1:
-            self.cookTime = @"20";
+            self.cookTime = @"20 mins";
             break;
         case 2:
-            self.cookTime = @"30";
+            self.cookTime = @"30 mins";
             break;
         case 3:
-            self.cookTime = @"40";
+            self.cookTime = @"40 mins";
             break;
         case 4:
-            self.cookTime = @"50";
+            self.cookTime = @"50 mins";
             break;
         case 5:
-            self.cookTime = @"60";
+            self.cookTime = @"60 mins";
             break;
     }
 }

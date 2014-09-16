@@ -40,9 +40,11 @@
         }
         else
         {
-            PFRelation *friendsRelation = appDelegate.currentUser[@"friendsRelation"];
+            PFRelation *relation = [appDelegate.currentUser relationforKey:@"friendsRelation"];
             
-            [friendsRelation addObject:object];
+            [relation addObject:object];
+            NSLog(@"addddding: %@", object);
+            NSLog(@"adding: %@", appDelegate.currentUser[@"friendsRelation"]);
 
             
             [appDelegate.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -52,20 +54,21 @@
                 }
                 else
                 {
-                    PFRelation *userFriendRelation = object[@"friendsRelation"];
-                    [userFriendRelation addObject:appDelegate.currentUser];
-                    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                        if (error)
-                        {
-                            NSLog(@"%@", error);
-                        }
-                        else
-                        {
-                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Successfully added!" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
-                            [alertView show];
-                            [self.navigationController popToRootViewControllerAnimated:YES];
-                        }
-                    }];
+//                    PFRelation *userFriendRelation = object[@"friendsRelation"];
+//                    [userFriendRelation addObject:appDelegate.currentUser];
+//                    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//                        if (error)
+//                        {
+//                            NSLog(@"%@", error);
+//                        }
+//                        else
+//                        {
+//                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Successfully added!" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+//                            [alertView show];
+//                            [self.navigationController popToRootViewControllerAnimated:YES];
+//                        }
+//                    }];
+                    [self.navigationController popToRootViewControllerAnimated:YES];
                 }
             }];
         

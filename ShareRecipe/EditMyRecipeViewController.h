@@ -13,10 +13,11 @@
 
 
 @property (nonatomic, strong) PFObject *selectedRecipe;
-@property (strong, nonatomic) IBOutlet UITextField *newName;
 @property (strong, nonatomic) IBOutlet UIImageView *recipeImage;
-@property (strong, nonatomic) IBOutlet UITextView *newIngredient;
-@property (strong, nonatomic) IBOutlet UITextView *newInstruction;
+@property (strong, nonatomic) IBOutlet UITextField *theNewName;
+@property (strong, nonatomic) IBOutlet UITextView *theNewIngredient;
+@property (strong, nonatomic) IBOutlet UITextView *theNewInstruction;
+
 
 - (IBAction)donePressed:(id)sender;
 

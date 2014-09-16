@@ -50,7 +50,6 @@
     {
     
         
-        NSLog(@"HELLLLO");
         // adding a new user to Parse
         
         PFUser *user = [PFUser user];

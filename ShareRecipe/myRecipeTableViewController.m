@@ -8,8 +8,8 @@
 
 #import "myRecipeTableViewController.h"
 #import <Parse/Parse.h>
-#import "MyRecipeCustomTableViewCell.h"
 #import "EditMyRecipeViewController.h"
+#import "MyRecipeTableViewCell.h"
 
 @interface myRecipeTableViewController ()
 
@@ -30,12 +30,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     
+    [super viewWillAppear:animated];
+    
     //showing the Recipe I added
     NSString *recipe = @"_Recipe";
     NSString *myRecipe = [appDelegate.currentUserName stringByAppendingString:recipe];
     
-    
     PFQuery *myList = [PFQuery queryWithClassName:myRecipe];
+    [myList whereKey:@"type" equalTo:@"recipe"];
     [myList orderByAscending:@"updatedAt"];
     
     [myList findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -46,6 +48,8 @@
         else
         {
             self.myRecipeList = objects;
+            [self.tableView reloadData];
+            NSLog(@"There are %d", [objects count]);
         }
     }];
     
@@ -73,24 +77,32 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    
     return [self.myRecipeList count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyRecipeCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    MyRecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
     
     PFObject *recipe = [self.myRecipeList objectAtIndex:indexPath.row];
     
     cell.recipeName.text = recipe[@"name"];
     cell.recipeTime.text = recipe[@"time"];
     
+    
     PFFile *imageFile = [recipe objectForKey:@"image"];
-    NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageFile.url];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
-    cell.recipePicture.image = [UIImage imageWithData:imageData];
+    if (imageFile.url)
+    {
+        NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageFile.url];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
+        cell.recipeImage.image = [UIImage imageWithData:imageData];
+    }
+    else
+    {
+        cell.recipeImage.image = [UIImage imageNamed:@"restaurant"];
+    }
     
     
     return cell;
@@ -102,6 +114,7 @@
     self.selectedRecipe = [self.myRecipeList objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"editMyRecipe" sender:self];
 }
+
 
 
 @end

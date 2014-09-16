@@ -29,14 +29,23 @@
     self.recipeInstruction.text = self.selectedRecipe[@"instruction"];
     self.recipeTime.text = self.selectedRecipe[@"time"];
     
-    
-    PFFile *imageFile = [self.selectedRecipe objectForKey:@"image"];
-    NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageFile.url];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
+
+    NSURL *imageFile = [self.selectedRecipe objectForKey:@"imageURL"];
+    if (imageFile)
+    {
+    NSData *imageData = [NSData dataWithContentsOfURL:imageFile];
     self.recipeImage.image = [UIImage imageWithData:imageData];
-    
+    }
+    else
+    {
+        self.recipeImage.image = [UIImage imageNamed:@"restaurant"];
+    }
     
     
 }
+
+
+
+
 
 @end

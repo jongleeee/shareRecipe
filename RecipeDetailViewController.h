@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
-@interface RecipeDetailViewController : UIViewController
+@interface RecipeDetailViewController : UIViewController {
+    AppDelegate *appDelegate;
+}
 
 @property (nonatomic, strong) PFObject *selectedRecipe;
+- (IBAction)bowlPressed:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIImageView *image;
+@property (strong, nonatomic) IBOutlet UITextView *ingredient;
+@property (strong, nonatomic) IBOutlet UITextView *instruction;
+@property (strong, nonatomic) IBOutlet UILabel *time;
+@property (strong, nonatomic) PFFile *imageFile;
+
+
 
 @end

@@ -37,5 +37,6 @@
 - (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float)height;
 
 - (void)getTime;
+- (void)upload;
 
 @end

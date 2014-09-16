@@ -16,5 +16,6 @@
 
 @property (nonatomic, strong) NSArray *friendRecipeList;
 @property (nonatomic, strong) PFUser *detailUser;
+@property (strong, nonatomic) PFObject *selectedRecipe;
 
 @end

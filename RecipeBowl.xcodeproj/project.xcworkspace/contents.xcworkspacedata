@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ShareRecipe.xcodeproj">
+      location = "self:RecipeBowl.xcodeproj">
    </FileRef>
 </Workspace>

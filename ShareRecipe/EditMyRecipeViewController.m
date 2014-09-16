@@ -24,9 +24,22 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationItem.title = self.selectedRecipe[@"name"];
-    self.newName.text = self.selectedRecipe[@"name"];
-    self.newIngredient.text = self.selectedRecipe[@"ingredient"];
-    self.newInstruction.text = self.selectedRecipe[@"instruction"];
+    self.theNewName.text = self.selectedRecipe[@"name"];
+    self.theNewIngredient.text = self.selectedRecipe[@"ingredients"];
+    self.theNewInstruction.text = self.selectedRecipe[@"instructions"];
+
+    
+    PFFile *image = self.selectedRecipe[@"image"];
+    if (image.url)
+    {
+    NSURL *imageURL = [NSURL URLWithString:image.url];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    self.recipeImage.image = [UIImage imageWithData:imageData];
+    }
+    else
+    {
+        self.recipeImage.image = [UIImage imageNamed:@"restaurant"];
+    }
 
 }
 
@@ -39,16 +52,16 @@
 
 - (IBAction)donePressed:(id)sender {
     
-    if ([self.newName.text length] == 0 || [self.newInstruction.text length] == 0 || [self.newIngredient.text length] == 0)
+    if ([self.theNewName.text length] == 0 || [self.theNewInstruction.text length] == 0 || [self.theNewIngredient.text length] == 0)
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please fill all the information!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
         [alertView show];
     }
     else
     {
-        self.selectedRecipe[@"name"] = self.newName.text;
-        self.selectedRecipe[@"ingredient"] = self.newIngredient.text;
-        self.selectedRecipe[@"instruction"] = self.newInstruction.text;
+        self.selectedRecipe[@"name"] = self.theNewName.text;
+        self.selectedRecipe[@"ingredient"] = self.theNewIngredient.text;
+        self.selectedRecipe[@"instruction"] = self.theNewInstruction.text;
         [self.selectedRecipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error)
             {

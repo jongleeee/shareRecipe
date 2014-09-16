@@ -64,6 +64,10 @@
 		FFA9EB1619BE301800B0BC6B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB1519BE301800B0BC6B /* SystemConfiguration.framework */; };
 		FFA9EB1819BE302200B0BC6B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA9EB1719BE302200B0BC6B /* Parse.framework */; };
 		FFA9EB2019BE337B00B0BC6B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */; };
+		FFBDBB6719C82CAA006EBDB4 /* MyRecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDBB6619C82CAA006EBDB4 /* MyRecipeTableViewCell.m */; };
+		FFBDBB6F19C83ABD006EBDB4 /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDBB6E19C83ABD006EBDB4 /* RecipeTableViewCell.m */; };
+		FFBDBB7219C83C22006EBDB4 /* FavoriteRecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDBB7119C83C22006EBDB4 /* FavoriteRecipeTableViewCell.m */; };
+		FFBDBB7519C840FE006EBDB4 /* FriendsDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBDBB7419C840FE006EBDB4 /* FriendsDetailTableViewCell.m */; };
 		FFC5AE8C19BF7977005B6163 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC5AE8B19BF7977005B6163 /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +155,14 @@
 		FFA9EB1719BE302200B0BC6B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		FFA9EB1E19BE337B00B0BC6B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FFA9EB1F19BE337B00B0BC6B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FFBDBB6519C82CAA006EBDB4 /* MyRecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRecipeTableViewCell.h; sourceTree = "<group>"; };
+		FFBDBB6619C82CAA006EBDB4 /* MyRecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRecipeTableViewCell.m; sourceTree = "<group>"; };
+		FFBDBB6D19C83ABD006EBDB4 /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
+		FFBDBB6E19C83ABD006EBDB4 /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
+		FFBDBB7019C83C22006EBDB4 /* FavoriteRecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteRecipeTableViewCell.h; sourceTree = "<group>"; };
+		FFBDBB7119C83C22006EBDB4 /* FavoriteRecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteRecipeTableViewCell.m; sourceTree = "<group>"; };
+		FFBDBB7319C840FE006EBDB4 /* FriendsDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsDetailTableViewCell.h; sourceTree = "<group>"; };
+		FFBDBB7419C840FE006EBDB4 /* FriendsDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsDetailTableViewCell.m; sourceTree = "<group>"; };
 		FFC5AE8A19BF7977005B6163 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		FFC5AE8B19BF7977005B6163 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +248,7 @@
 		FF32838C19B6EFE900DBDEC7 /* ShareRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				FFBDBB6A19C8337F006EBDB4 /* image */,
 				FF3283B919B6F02700DBDEC7 /* MainStoryboard.storyboard */,
 				FF32839519B6EFE900DBDEC7 /* AppDelegate.h */,
 				FF32839619B6EFE900DBDEC7 /* AppDelegate.m */,
@@ -282,6 +295,14 @@
 		FF45943319C3ADFA00E48721 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
+				FFBDBB7319C840FE006EBDB4 /* FriendsDetailTableViewCell.h */,
+				FFBDBB7419C840FE006EBDB4 /* FriendsDetailTableViewCell.m */,
+				FFBDBB7019C83C22006EBDB4 /* FavoriteRecipeTableViewCell.h */,
+				FFBDBB7119C83C22006EBDB4 /* FavoriteRecipeTableViewCell.m */,
+				FFBDBB6D19C83ABD006EBDB4 /* RecipeTableViewCell.h */,
+				FFBDBB6E19C83ABD006EBDB4 /* RecipeTableViewCell.m */,
+				FFBDBB6519C82CAA006EBDB4 /* MyRecipeTableViewCell.h */,
+				FFBDBB6619C82CAA006EBDB4 /* MyRecipeTableViewCell.m */,
 				FF45943019C3ACA000E48721 /* MyRecipeCustomTableViewCell.h */,
 				FF45943119C3ACA000E48721 /* MyRecipeCustomTableViewCell.m */,
 			);
@@ -357,6 +378,13 @@
 			name = Friends;
 			sourceTree = "<group>";
 		};
+		FFBDBB6A19C8337F006EBDB4 /* image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
 		FFC5AE8D19BF797E005B6163 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,7 +448,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FF32837C19B6EFE900DBDEC7 /* Build configuration list for PBXProject "ShareRecipe" */;
+			buildConfigurationList = FF32837C19B6EFE900DBDEC7 /* Build configuration list for PBXProject "RecipeBowl" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -485,17 +513,21 @@
 				FF45943219C3ACA000E48721 /* MyRecipeCustomTableViewCell.m in Sources */,
 				FF4594A119C3CAB300E48721 /* FriendRecipeDetailViewController.m in Sources */,
 				FF32EAEB19C0CDF500F1AEF1 /* SearchFriendsViewController.m in Sources */,
+				FFBDBB7219C83C22006EBDB4 /* FavoriteRecipeTableViewCell.m in Sources */,
 				FF45943619C3AE5900E48721 /* EditMyRecipeViewController.m in Sources */,
 				FF32839A19B6EFE900DBDEC7 /* ShareRecipe.xcdatamodeld in Sources */,
 				FFC5AE8C19BF7977005B6163 /* RegisterViewController.m in Sources */,
 				FF45944219C3BCA400E48721 /* RecipeDetailViewController.m in Sources */,
+				FFBDBB6719C82CAA006EBDB4 /* MyRecipeTableViewCell.m in Sources */,
 				FF32839719B6EFE900DBDEC7 /* AppDelegate.m in Sources */,
+				FFBDBB6F19C83ABD006EBDB4 /* RecipeTableViewCell.m in Sources */,
 				FF32839319B6EFE900DBDEC7 /* main.m in Sources */,
 				FFA9EB0419BE2D8500B0BC6B /* RecipeTableViewController.m in Sources */,
 				FF45949E19C3C3BA00E48721 /* FriendRecipeTableViewController.m in Sources */,
 				FF45942F19C3AADF00E48721 /* myRecipeTableViewController.m in Sources */,
 				FF45942619C3A09600E48721 /* FavoriteRecipeTableViewController.m in Sources */,
 				FF32EAE819C0CDD500F1AEF1 /* FriendsTableViewController.m in Sources */,
+				FFBDBB7519C840FE006EBDB4 /* FriendsDetailTableViewCell.m in Sources */,
 				FFA9EB2019BE337B00B0BC6B /* LoginViewController.m in Sources */,
 				FF45943F19C3BC5E00E48721 /* FavoriteRecipeDetailViewController.m in Sources */,
 				FF45944519C3BEB100E48721 /* AddRecipeViewController.m in Sources */,
@@ -687,7 +719,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF32837C19B6EFE900DBDEC7 /* Build configuration list for PBXProject "ShareRecipe" */ = {
+		FF32837C19B6EFE900DBDEC7 /* Build configuration list for PBXProject "RecipeBowl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FF3283B119B6EFE900DBDEC7 /* Debug */,

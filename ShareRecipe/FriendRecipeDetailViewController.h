@@ -10,6 +10,11 @@
 #import <Parse/Parse.h>
 
 @interface FriendRecipeDetailViewController : UIViewController
+@property (strong, nonatomic) PFObject *selectedRecipe;
+@property (strong, nonatomic) IBOutlet UILabel *time;
+@property (strong, nonatomic) IBOutlet UIImageView *image;
+@property (strong, nonatomic) IBOutlet UITextView *ingredient;
+@property (strong, nonatomic) IBOutlet UITextView *instruction;
 
 
 @end

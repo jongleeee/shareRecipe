@@ -9,7 +9,7 @@
 #import "FavoriteRecipeTableViewController.h"
 #import "MyRecipeCustomTableViewCell.h"
 #import "FavoriteRecipeDetailViewController.h"
-#import "MyRecipeCustomTableViewCell.h"
+#import "FavoriteRecipeTableViewCell.h"
 
 @interface FavoriteRecipeTableViewController ()
 
@@ -30,8 +30,9 @@
 {
     NSString *bowl = @"_Bowl";
     NSString *favorite = [appDelegate.currentUserName stringByAppendingString:bowl];
-    
+
     PFQuery *query = [PFQuery queryWithClassName:favorite];
+    [query whereKey:@"type" equalTo:@"recipe"];
     [query orderByDescending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error)
@@ -41,6 +42,7 @@
         else
         {
             self.bowlRecipe = objects;
+            [self.tableView reloadData];
         }
     }];
 }
@@ -71,18 +73,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyRecipeCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    FavoriteRecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     PFObject *recipe = [self.bowlRecipe objectAtIndex:indexPath.row];
     
-    cell.recipeName.text = recipe[@"name"];
-    cell.recipeTime.text = recipe[@"time"];
+    cell.name.text = recipe[@"name"];
+    cell.time.text = recipe[@"time"];
     
-    PFFile *imageFile = [recipe objectForKey:@"imageURL"];
-    NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageFile.url];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
-    cell.recipePicture.image = [UIImage imageWithData:imageData];
-    
+    NSURL *imageFile = [recipe objectForKey:@"imageURL"];
+    if (imageFile)
+    {
+    NSData *imageData = [NSData dataWithContentsOfURL:imageFile];
+    cell.image.image = [UIImage imageWithData:imageData];
+    }
+    else
+    {
+        cell.image.image = [UIImage imageNamed:@"restaurant"];
+    }
     
     return cell;
 }

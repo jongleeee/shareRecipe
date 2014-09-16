@@ -30,6 +30,13 @@
     NSString *username = self.username.text;
     NSString *userpassword = self.password.text;
     
+    if ([username length] == 0 || [userpassword length] == 0)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Please fill all the information!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    else
+    {
     [PFUser logInWithUsernameInBackground:username password:userpassword block:^(PFUser *user, NSError *error) {
         if (error)
         {
@@ -46,6 +53,7 @@
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
     }];
+    }
     
 }
 

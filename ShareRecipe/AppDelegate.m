@@ -28,7 +28,6 @@
     
     self.currentUser = [PFUser currentUser];
     
-    
     return YES;
 }
 

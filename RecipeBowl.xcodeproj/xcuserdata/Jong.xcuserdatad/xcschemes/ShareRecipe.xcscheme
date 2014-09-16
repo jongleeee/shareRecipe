@@ -17,7 +17,7 @@
                BlueprintIdentifier = "FF32838019B6EFE900DBDEC7"
                BuildableName = "ShareRecipe.app"
                BlueprintName = "ShareRecipe"
-               ReferencedContainer = "container:ShareRecipe.xcodeproj">
+               ReferencedContainer = "container:RecipeBowl.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "FF3283A019B6EFE900DBDEC7"
                BuildableName = "ShareRecipeTests.xctest"
                BlueprintName = "ShareRecipeTests"
-               ReferencedContainer = "container:ShareRecipe.xcodeproj">
+               ReferencedContainer = "container:RecipeBowl.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "FF32838019B6EFE900DBDEC7"
             BuildableName = "ShareRecipe.app"
             BlueprintName = "ShareRecipe"
-            ReferencedContainer = "container:ShareRecipe.xcodeproj">
+            ReferencedContainer = "container:RecipeBowl.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "FF32838019B6EFE900DBDEC7"
             BuildableName = "ShareRecipe.app"
             BlueprintName = "ShareRecipe"
-            ReferencedContainer = "container:ShareRecipe.xcodeproj">
+            ReferencedContainer = "container:RecipeBowl.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "FF32838019B6EFE900DBDEC7"
             BuildableName = "ShareRecipe.app"
             BlueprintName = "ShareRecipe"
-            ReferencedContainer = "container:ShareRecipe.xcodeproj">
+            ReferencedContainer = "container:RecipeBowl.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -9,9 +9,8 @@
 #import "RecipeTableViewController.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
-#import "MyRecipeCustomTableViewCell.h"
 #import "RecipeDetailViewController.h"
-
+#import "RecipeTableViewCell.h"
 
 @interface RecipeTableViewController ()
 
@@ -48,6 +47,60 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // get the friends relation and "or" queries of friend's recipe using orQueryWithSubqueries
+    if (appDelegate.currentUser)
+    {
+    PFRelation *friends = [appDelegate.currentUser relationForKey:@"friendsRelation"];
+    PFQuery *query = [friends query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error: %@", error);
+        }
+        else
+        {
+            NSString *recipe = @"_Recipe";
+            
+            PFQuery *firstQuery;
+            PFQuery *secondQuery;
+            PFQuery *thirdQuery;
+            
+            for (int i = 0; i < [objects count]; i++) {
+                
+                NSString *bowl = [[objects objectAtIndex:i][@"username"] stringByAppendingString:recipe];
+                
+                if (i == 0)
+                {
+                    firstQuery = [PFQuery queryWithClassName:bowl];
+                }
+                else
+                {
+                    secondQuery = [PFQuery queryWithClassName:bowl];
+                    thirdQuery = [PFQuery orQueryWithSubqueries:@[firstQuery, secondQuery]];
+                    firstQuery = thirdQuery;
+                }
+            }
+            
+            [firstQuery whereKey:@"type" equalTo:@"recipe"];
+            [firstQuery orderByDescending:@"updatedAt"];
+            
+            [firstQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+            {
+                if (error)
+                {
+                    NSLog(@"error: %@", error);
+                }
+                else
+                {
+                    self.bowlList = objects;
+                    [self.tableView reloadData];
+                }
+            }];
+            
+        }
+    }];
+    }
+    
+    
     
 }
 
@@ -88,19 +141,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyRecipeCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     PFObject *recipe = [self.bowlList objectAtIndex:indexPath.row];
     
-    cell.recipeName.text = recipe[@"name"];
-    cell.recipeTime.text = recipe[@"time"];
+    cell.name.text = recipe[@"name"];
+    cell.time.text = recipe[@"time"];
     
     // getting the imageURL from the Parse
-    NSString *imageURL = recipe[@"imageURL"];
-    NSURL *imageFileUrl = [[NSURL alloc] initWithString:imageURL];
+    PFFile *image = recipe[@"image"];
+    if (image.url)
+    {
+    NSURL *imageFileUrl = [[NSURL alloc] initWithString:image.url];
     NSData *imageData = [NSData dataWithContentsOfURL:imageFileUrl];
-    cell.recipePicture.image = [UIImage imageWithData:imageData];
-    
+    cell.image.image = [UIImage imageWithData:imageData];
+    }
+    else
+    {
+        cell.image.image = [UIImage imageNamed:@"restaurant"];
+    }
     
     return cell;
 }
